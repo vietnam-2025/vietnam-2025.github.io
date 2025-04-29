@@ -1,192 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Vietnam</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-    }
-    .slide-container {
-      width: 1280px;
-      min-height: 720px;
-      position: relative;
-      background: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-    }
-    .vietnam-accent {
-      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
-    }
-    .vietnam-bar {
-      background-color: #da251d;
-      height: 8px;
-      width: 100%;
-    }
-    .map-container {
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
-    .landscape-image {
-      height: 175px;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: transform 0.3s;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .landscape-container:hover .landscape-image {
-      transform: scale(1.03);
-    }
-    .caption {
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 4px;
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      font-size: 14px;
-    }
-    .city-marker {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #da251d;
-      border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 0 4px rgba(0,0,0,0.5);
-    }
-    .city-label {
-      position: absolute;
-      font-size: 12px;
-      font-weight: bold;
-      color: #333;
-      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
-    }
-    .yellow-accent {
-      color: #ffcd00;
-    }
-  </style>
-</head>
-<body>
-  <div class="slide-container mx-auto vietnam-accent">
-    <div class="vietnam-bar"></div>
-    
-    <div class="p-8">
-      <!-- Title Section -->
-      <header class="mb-6 flex items-center">
-        <div>
-          <h1 class="text-5xl font-bold text-gray-800 mb-2">Welcome to Vietnam</h1>
-          <p class="text-xl text-gray-600">A land of breathtaking landscapes, rich culture, and vibrant cities</p>
-        </div>
-        <div class="ml-auto">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/200px-Flag_of_Vietnam.svg.png" alt="Vietnam Flag" class="h-16 shadow-md">
-        </div>
-      </header>
-      
-      <div class="flex">
-        <!-- Map Column -->
-        <div class="w-1/2 pr-4">
-          <div class="map-container">
-            <img src="https://vietnamnomad.com/wp-content/uploads/2020/07/Vietnam-map.jpg" alt="Map of Vietnam" class="w-full">
-            
-            <!-- City Markers -->
-            <div class="city-marker" style="top: 23%; left: 44%;"></div>
-            <div class="city-label" style="top: 19%; left: 46%;">Hanoi</div>
-            
-            <div class="city-marker" style="top: 68%; left: 52%;"></div>
-            <div class="city-label" style="top: 64%; left: 54%;">Ho Chi Minh City</div>
-            
-            <div class="city-marker" style="top: 48%; left: 40%;"></div>
-            <div class="city-label" style="top: 44%; left: 42%;">Da Nang</div>
-            
-            <div class="city-marker" style="top: 50%; left: 40%;"></div>
-            <div class="city-label" style="top: 53%; left: 42%;">Hoi An</div>
-            
-            <div class="city-marker" style="top: 42%; left: 38%;"></div>
-            <div class="city-label" style="top: 38%; left: 40%;">Hue</div>
-          </div>
-          
-          <div class="bg-white p-4 shadow-md mt-3 rounded">
-            <h3 class="text-lg font-semibold mb-2 flex items-center">
-              <i class="fas fa-info-circle text-blue-500 mr-2"></i>Key Facts
-            </h3>
-            <div class="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <p><i class="fas fa-landmark text-gray-600 mr-2"></i><span class="font-semibold">Capital:</span> Hanoi</p>
-                <p><i class="fas fa-city text-gray-600 mr-2"></i><span class="font-semibold">Largest City:</span> Ho Chi Minh City</p>
-                <p><i class="fas fa-users text-gray-600 mr-2"></i><span class="font-semibold">Population:</span> 98 million</p>
-              </div>
-              <div>
-                <p><i class="fas fa-map text-gray-600 mr-2"></i><span class="font-semibold">Area:</span> 331,212 km²</p>
-                <p><i class="fas fa-language text-gray-600 mr-2"></i><span class="font-semibold">Language:</span> Vietnamese</p>
-                <p><i class="fas fa-money-bill-wave text-gray-600 mr-2"></i><span class="font-semibold">Currency:</span> Vietnamese đồng (₫)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Landscapes Column -->
-        <div class="w-1/2 pl-4">
-          <h2 class="text-2xl font-semibold mb-4 flex items-center">
-            <i class="fas fa-mountain text-green-600 mr-2"></i>Diverse Landscapes
-          </h2>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="landscape-container relative">
-              <img src="https://haivenu-vietnam.com/wp-content/uploads/2024/03/sapa-valleys-vietnam-e1710933019726.jpeg" alt="Northern Mountains" class="landscape-image w-full">
-              <div class="caption">Terraced Rice Fields (Sapa)</div>
-            </div>
-            <div class="landscape-container relative">
-              <img src="https://www.holidify.com/images/cmsuploads/compressed/hagiang_20180729014042.jpg" alt="Central Highlands" class="landscape-image w-full">
-              <div class="caption">Mountains of Ha Giang</div>
-            </div>
-            <div class="landscape-container relative">
-              <img src="https://statics.vinpearl.com/geography-of-vietnam-01_1679026104.jpg" alt="Coastline" class="landscape-image w-full">
-              <div class="caption">Coastal Regions</div>
-            </div>
-            <div class="landscape-container relative">
-              <img src="https://static.vinwonders.com/production/vietnam-nature-2.jpeg" alt="Mekong Delta" class="landscape-image w-full">
-              <div class="caption">Mekong Delta</div>
-            </div>
-          </div>
-          
-          <div class="mt-4 bg-gray-100 p-4 rounded-lg shadow-inner">
-            <h3 class="text-lg font-semibold mb-2 flex items-center">
-              <i class="fas fa-city text-blue-600 mr-2"></i>Major Cities
-            </h3>
-            <div class="flex flex-wrap">
-              <div class="w-1/2 text-sm">
-                <p><i class="fas fa-star yellow-accent mr-1"></i> <span class="font-semibold">Hanoi</span> - Capital</p>
-                <p><i class="fas fa-building text-gray-500 mr-1"></i> <span class="font-semibold">Ho Chi Minh City</span> - Financial Hub</p>
-                <p><i class="fas fa-water text-blue-500 mr-1"></i> <span class="font-semibold">Da Nang</span> - Coastal City</p>
-              </div>
-              <div class="w-1/2 text-sm">
-                <p><i class="fas fa-archway text-amber-500 mr-1"></i> <span class="font-semibold">Hoi An</span> - Ancient Town</p>
-                <p><i class="fas fa-monument text-purple-500 mr-1"></i> <span class="font-semibold">Hue</span> - Imperial City</p>
-                <p><i class="fas fa-umbrella-beach text-red-400 mr-1"></i> <span class="font-semibold">Nha Trang</span> - Beach Resort</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
-      <span>Vietnam Travel Presentation</span>
-      <span>Slide 1: Introduction</span>
-    </div>
-  </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Welcome to Vietnam</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+		/>
+		<style>
+			body {
+				font-family: "Roboto", sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f8f9fa;
+			}
+			.slide-container {
+				width: 1280px; /* Adjusted width */
+				min-height: 720px;
+				position: relative;
+				background: white;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+				margin: 2rem auto; /* Center the container */
+			}
+			h1 {
+				font-family: "Playfair Display", serif;
+			}
+			.vietnam-accent {
+				/* Optional: Subtle background gradient */
+				/* background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%); */
+				background: #ffffff; /* White background as per screenshot */
+			}
+			.vietnam-bar {
+				background-color: #da251d; /* Red bar */
+				height: 8px;
+				width: 100%;
+			}
+			.map-container {
+				overflow: hidden;
+				border-radius: 8px;
+				/* Removed shadow to match screenshot */
+				/* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+				position: relative;
+				border: 1px solid #eee; /* Subtle border */
+			}
+			.landscape-image {
+				height: 120px; /* Adjusted height */
+				object-fit: cover;
+				border-radius: 8px;
+				transition: transform 0.3s;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+			.landscape-container:hover .landscape-image {
+				transform: scale(1.03);
+			}
+			.caption {
+				background: rgba(0, 0, 0, 0.6);
+				color: white;
+				padding: 4px 8px; /* Adjusted padding */
+				border-radius: 4px;
+				position: absolute;
+				bottom: 8px; /* Adjusted position */
+				left: 8px; /* Adjusted position */
+				font-size: 12px; /* Adjusted font size */
+			}
+			.city-marker {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background-color: #da251d;
+				border-radius: 50%;
+				border: 2px solid white;
+				box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+			}
+			.city-label {
+				position: absolute;
+				font-size: 12px;
+				font-weight: bold;
+				color: #333;
+				text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+			}
+			.yellow-accent {
+				color: #ffcd00; /* Yellow star color */
+			}
+			.key-facts-box {
+				background-color: #f8f9fa; /* Light grey background */
+				border: 1px solid #e9ecef; /* Subtle border */
+			}
+			.major-cities-box {
+				background-color: #f8f9fa; /* Light grey background */
+				border: 1px solid #e9ecef; /* Subtle border */
+			}
+			.video-container {
+				position: relative;
+				padding-bottom: 56.25%; /* 16:9 aspect ratio */
+				height: 0;
+				overflow: hidden;
+				max-width: 100%;
+				background: #000;
+				border-radius: 8px;
+				margin-bottom: 1rem; /* Space below video */
+			}
+			.video-container iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slide-container mx-auto vietnam-accent">
+			<div class="vietnam-bar"></div>
+
+			<div class="p-6">
+				<!-- Title Section -->
+				<header class="mb-4 flex items-center">
+					<div>
+						<h1 class="text-4xl font-bold text-gray-800 mb-1">
+							Welcome to Vietnam
+						</h1>
+						<p class="text-lg text-gray-600">
+							A land of breathtaking landscapes, rich culture, and vibrant
+							cities
+						</p>
+					</div>
+					<div class="ml-auto">
+						<img
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/150px-Flag_of_Vietnam.svg.png"
+						alt="Vietnam Flag" class="h-12 shadow-sm" /* Adjusted size */ />
+					</div>
+				</header>
+
+				<div class="flex">
+					<!-- Left Column: Map & Key Facts -->
+					<div class="w-1/2 pr-3">
+						<div class="map-container mb-3">
+							<img
+								src="https://vietnamnomad.com/wp-content/uploads/2020/07/Vietnam-map.jpg"
+								alt="Map of Vietnam"
+								class="w-full"
+							/>
+							<!-- City Markers (Optional - kept for reference) -->
+							<div class="city-marker" style="top: 23%; left: 44%"></div>
+							<div class="city-label" style="top: 19%; left: 46%">Hanoi</div>
+							<div class="city-marker" style="top: 68%; left: 52%"></div>
+							<div class="city-label" style="top: 64%; left: 54%">
+								Ho Chi Minh City
+							</div>
+							<div class="city-marker" style="top: 48%; left: 40%"></div>
+							<div class="city-label" style="top: 44%; left: 42%">Da Nang</div>
+							<div class="city-marker" style="top: 50%; left: 40%"></div>
+							<div class="city-label" style="top: 53%; left: 42%">Hoi An</div>
+							<div class="city-marker" style="top: 42%; left: 38%"></div>
+							<div class="city-label" style="top: 38%; left: 40%">Hue</div>
+						</div>
+
+						<div class="key-facts-box p-3 shadow-sm rounded">
+							<h3 class="text-lg font-semibold mb-2 flex items-center">
+								<i class="fas fa-info-circle text-blue-500 mr-2"></i>Key Facts
+							</h3>
+							<div class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+								<div>
+									<p>
+										<i class="fas fa-landmark text-gray-600 mr-1 w-4"></i
+										><span class="font-semibold">Capital:</span> Hanoi
+									</p>
+									<p>
+										<i class="fas fa-city text-gray-600 mr-1 w-4"></i
+										><span class="font-semibold">Largest City:</span> HCMC
+									</p>
+									<p>
+										<i class="fas fa-users text-gray-600 mr-1 w-4"></i
+										><span class="font-semibold">Population:</span> 98 million
+									</p>
+								</div>
+								<div>
+									<p>
+										<i class="fas fa-map text-gray-600 mr-1 w-4"></i
+										><span class="font-semibold">Area:</span> 331,212 km²
+									</p>
+									<p>
+										<i class="fas fa-language text-gray-600 mr-1 w-4"></i
+										><span class="font-semibold">Language:</span> Vietnamese
+									</p>
+									<p>
+										<i class="fas fa-money-bill-wave text-gray-600 mr-1 w-4"></i
+										><span class="font-semibold">Currency:</span> VND (₫)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column: Video, Landscapes, Cities -->
+					<div class="w-1/2 pl-3">
+						<!-- YouTube Video -->
+						<div class="video-container shadow-md">
+							<iframe
+								width="560"
+								height="315"
+								src="https://www.youtube.com/embed/gbi6EfPFJCY"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen
+							></iframe>
+						</div>
+
+						<!-- Diverse Landscapes -->
+						<div class="mb-3">
+							<h2 class="text-xl font-semibold mb-2 flex items-center">
+								<i class="fas fa-mountain text-green-600 mr-2"></i>Diverse
+								Landscapes
+							</h2>
+							<div class="grid grid-cols-2 gap-3">
+								<div class="landscape-container relative">
+									<img
+										src="https://haivenu-vietnam.com/wp-content/uploads/2024/03/sapa-valleys-vietnam-e1710933019726.jpeg"
+										alt="Northern Mountains"
+										class="landscape-image w-full"
+									/>
+									<div class="caption">Terraced Rice Fields (Sapa)</div>
+								</div>
+								<div class="landscape-container relative">
+									<img
+										src="https://static.vinwonders.com/production/The-majestic-Tay-Con-Linh-Mountain.jpg"
+										alt="Central Highlands"
+										class="landscape-image w-full"
+									/>
+									<div class="caption">Mountains of Ha Giang</div>
+								</div>
+								<div class="landscape-container relative">
+									<img
+										src="https://static.vinwonders.com/2022/12/vinwonders-nha-trang-2.jpg"
+										alt="Coastline"
+										class="landscape-image w-full"
+									/>
+									<div class="caption">Coastal Regions</div>
+								</div>
+								<div class="landscape-container relative">
+									<img
+										src="https://static.vinwonders.com/production/Mekong-Delta-banner.jpeg"
+										alt="Mekong Delta"
+										class="landscape-image w-full"
+									/>
+									<div class="caption">Mekong Delta</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Major Cities -->
+						<div class="major-cities-box p-3 rounded-lg shadow-sm">
+							<h3 class="text-lg font-semibold mb-2 flex items-center">
+								<i class="fas fa-city text-blue-600 mr-2"></i>Major Cities
+							</h3>
+							<div class="flex flex-wrap">
+								<div class="w-1/2 text-sm pr-2">
+									<p class="mb-1">
+										<i class="fas fa-star yellow-accent mr-1 w-4"></i>
+										<span class="font-semibold">Hanoi</span> - Capital
+									</p>
+									<p class="mb-1">
+										<i class="fas fa-building text-gray-500 mr-1 w-4"></i>
+										<span class="font-semibold">Ho Chi Minh City</span> -
+										Financial Hub
+									</p>
+									<p>
+										<i class="fas fa-water text-blue-500 mr-1 w-4"></i>
+										<span class="font-semibold">Da Nang</span> - Coastal City
+									</p>
+								</div>
+								<div class="w-1/2 text-sm pl-2">
+									<p class="mb-1">
+										<i class="fas fa-archway text-amber-500 mr-1 w-4"></i>
+										<span class="font-semibold">Hoi An</span> - Ancient Town
+									</p>
+									<p class="mb-1">
+										<i class="fas fa-monument text-purple-500 mr-1 w-4"></i>
+										<span class="font-semibold">Hue</span> - Imperial City
+									</p>
+									<p>
+										<i class="fas fa-umbrella-beach text-red-400 mr-1 w-4"></i>
+										<span class="font-semibold">Nha Trang</span> - Beach Resort
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div
+				class="bg-gray-800 text-white p-2 text-xs flex justify-between absolute bottom-0 w-full"
+			>
+				<span>Vietnam Travel Presentation</span>
+				<span>Slide 1: Introduction</span>
+			</div>
+		</div>
+	</body>
 </html>
