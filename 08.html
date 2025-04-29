@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure Awaits</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      position: relative;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+    .vietnam-accent {
+      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
+    }
+    .vietnam-bar {
+      background-color: #da251d;
+      height: 8px;
+      width: 100%;
+    }
+    .hiking-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+      background-color: white;
+    }
+    .hiking-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .hiking-image {
+      height: 160px;
+      object-fit: cover;
+      width: 100%;
+      transition: transform 0.4s ease;
+    }
+    .hiking-card:hover .hiking-image {
+      transform: scale(1.05);
+    }
+    .image-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+    .difficulty-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      color: white;
+    }
+    .easy {
+      background-color: #10b981;
+    }
+    .moderate {
+      background-color: #f59e0b;
+    }
+    .challenging {
+      background-color: #ef4444;
+    }
+    .extreme {
+      background-color: #7f1d1d;
+    }
+    .detail-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 4px;
+      background-color: rgba(209, 213, 219, 0.5);
+    }
+    .trail-map {
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .hiking-tip {
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      background-color: #f3f4f6;
+      border-left: 4px solid #4b5563;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container mx-auto vietnam-accent">
+    <div class="vietnam-bar"></div>
+    
+    <div class="p-8">
+      <!-- Title Section -->
+      <header class="mb-5 flex items-center">
+        <div>
+          <h1 class="text-4xl font-bold text-gray-800 mb-1">Adventure Awaits</h1>
+          <p class="text-lg text-gray-600">Discover Vietnam's most exhilarating hiking trails in the Northwest mountains</p>
+        </div>
+        <div class="ml-auto">
+          <span class="text-sm font-medium bg-blue-100 text-blue-800 py-1 px-3 rounded-full">
+            <i class="fas fa-mountain mr-1"></i>Trekking Paradise
+          </span>
+        </div>
+      </header>
+      
+      <div class="grid grid-cols-3 gap-5">
+        <!-- Fansipan -->
+        <div class="hiking-card">
+          <div class="image-wrapper">
+            <img src="https://impresstravel.com/wp-content/uploads/2021/03/Sapa-Trekking-Homestay-Market-10.jpg" alt="Fansipan Mountain" class="hiking-image">
+            <div class="difficulty-badge challenging">Challenging</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Fansipan Mountain</h3>
+            <p class="text-xs text-gray-700 mb-1">
+              <i class="fas fa-trophy text-yellow-500 mr-1"></i>"Roof of Indochina" - 3,143m
+            </p>
+            <p class="text-xs text-gray-600 mb-2">Vietnam's highest peak offering spectacular views of Sapa Valley and surrounding mountains. Choose between a challenging 2-day trek or take the cable car for easier access.</p>
+            
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="detail-icon fas fa-clock"></i>1-2 days</span>
+              <span><i class="detail-icon fas fa-shoe-prints"></i>15km trail</span>
+              <span><i class="detail-icon fas fa-mountain"></i>1,400m ascent</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bach Moc Luong Tu -->
+        <div class="hiking-card">
+          <div class="image-wrapper">
+            <img src="https://impresstravel.com/wp-content/uploads/2024/08/5-day-journey-exploring-mai-chau-mu-cang-chai-and-sapa-1.jpg" alt="Bach Moc Luong Tu" class="hiking-image">
+            <div class="difficulty-badge extreme">Extreme</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Bach Moc Luong Tu</h3>
+            <p class="text-xs text-gray-700 mb-1">
+              <i class="fas fa-mountain text-blue-500 mr-1"></i>Vietnam's 4th highest peak - 3,046m
+            </p>
+            <p class="text-xs text-gray-600 mb-2">Less traveled than Fansipan, this challenging multi-day trek rewards adventurers with pristine wilderness, cloud-covered summits, and untouched beauty.</p>
+            
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="detail-icon fas fa-clock"></i>3 days</span>
+              <span><i class="detail-icon fas fa-shoe-prints"></i>30km trail</span>
+              <span><i class="detail-icon fas fa-campground"></i>Wilderness camping</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ta Xua -->
+        <div class="hiking-card">
+          <div class="image-wrapper">
+            <img src="https://maichau.ecolodge.asia/ckfinder/userfiles/images/mai-chau-ecolodge-ta-xua.jpg" alt="Ta Xua" class="hiking-image">
+            <div class="difficulty-badge moderate">Moderate</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Ta Xua Ridge</h3>
+            <p class="text-xs text-gray-700 mb-1">
+              <i class="fas fa-cloud text-gray-400 mr-1"></i>"Cloud hunting paradise" - 2,865m
+            </p>
+            <p class="text-xs text-gray-600 mb-2">Famous for its "dinosaur spine" ridge trail and sea of clouds. Early morning treks offer surreal views of mountains piercing through the mist.</p>
+            
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="detail-icon fas fa-clock"></i>1-2 days</span>
+              <span><i class="detail-icon fas fa-shoe-prints"></i>10km ridge trail</span>
+              <span><i class="detail-icon fas fa-camera"></i>Sunrise viewpoints</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mai Chau Valley -->
+        <div class="hiking-card">
+          <div class="image-wrapper">
+            <img src="https://impresstravel.com/wp-content/uploads/2024/08/5-day-journey-exploring-mai-chau-mu-cang-chai-and-sapa-4.jpg" alt="Mai Chau Valley" class="hiking-image">
+            <div class="difficulty-badge easy">Easy</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Mai Chau Valley</h3>
+            <p class="text-xs text-gray-700 mb-1">
+              <i class="fas fa-seedling text-green-500 mr-1"></i>Cultural trekking experience
+            </p>
+            <p class="text-xs text-gray-600 mb-2">Gentle hikes through emerald rice paddies, traditional White Thai villages, and lush valleys. Perfect for cultural immersion and beginner trekkers.</p>
+            
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="detail-icon fas fa-clock"></i>Half-day to 2 days</span>
+              <span><i class="detail-icon fas fa-home"></i>Homestay options</span>
+              <span><i class="detail-icon fas fa-utensils"></i>Local cuisine</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mu Cang Chai -->
+        <div class="hiking-card">
+          <div class="image-wrapper">
+            <img src="https://impresstravel.com/wp-content/uploads/2024/08/adventure-on-a-full-day-trekking-tour-in-mu-cang-chai-5.jpg" alt="Mu Cang Chai" class="hiking-image">
+            <div class="difficulty-badge moderate">Moderate</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Mu Cang Chai</h3>
+            <p class="text-xs text-gray-700 mb-1">
+              <i class="fas fa-award text-yellow-600 mr-1"></i>UNESCO-recognized terraced fields
+            </p>
+            <p class="text-xs text-gray-600 mb-2">Stunning treks through centuries-old rice terraces that change colors seasonally. September-October offers golden harvest views while May brings emerald green landscapes.</p>
+            
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="detail-icon fas fa-clock"></i>1-3 days</span>
+              <span><i class="detail-icon fas fa-users"></i>H'mong villages</span>
+              <span><i class="detail-icon fas fa-sun"></i>Seasonal beauty</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Northwest Vietnam Trail Map -->
+        <div class="trail-map col-span-1 p-3 bg-gray-50">
+          <h3 class="text-base font-bold mb-2">Essential Gear</h3>
+          <ul class="text-xs space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-600 mr-2"></i>
+              <span>Sturdy hiking boots with ankle support</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-600 mr-2"></i>
+              <span>Quick-dry clothing (layers for variable weather)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-600 mr-2"></i>
+              <span>Rain gear (even in dry season)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-600 mr-2"></i>
+              <span>Trekking poles for steep descents</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-600 mr-2"></i>
+              <span>First aid kit & insect repellent</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Hiking Tips Section -->
+      <div class="mt-4 bg-blue-50 rounded-lg p-3 flex items-start">
+        <div class="text-blue-700 text-3xl mr-4">
+          <i class="fas fa-hiking"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-blue-800 mb-1">Insider Tips for Northwest Vietnam Trekking:</h3>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="hiking-tip border-l-indigo-500 bg-indigo-50">
+              <strong class="text-indigo-700">Best Season:</strong> 
+              <p class="text-indigo-600 text-xs mt-1">September-November and March-May offer clear skies and moderate temperatures. Avoid summer monsoon season (June-August).</p>
+            </div>
+            
+            <div class="hiking-tip border-l-green-500 bg-green-50">
+              <strong class="text-green-700">Local Guides:</strong> 
+              <p class="text-green-600 text-xs mt-1">Hire local ethnic minority guides for safety, cultural insights, and support of local communities. Typically costs 300,000-500,000₫/day.</p>
+            </div>
+            
+            <div class="hiking-tip border-l-amber-500 bg-amber-50">
+              <strong class="text-amber-700">Transportation:</strong> 
+              <p class="text-amber-600 text-xs mt-1">Most trailheads are 5-8 hours from Hanoi. Overnight buses or private transfers available. Consider multi-region trekking tours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+      <span>Vietnam Travel Presentation</span>
+      <span>Slide 8: Adventure Awaits</span>
+    </div>
+  </div>
+</body>
+</html>

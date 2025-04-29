@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Slideshow</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        #slide-container {
+            width: 80vw; /* Use viewport width for responsiveness */
+            height: calc(80vw * 9 / 16); /* Maintain a 16:9 aspect ratio */
+            max-height: 85vh; /* Limit height based on viewport height */
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+            margin-bottom: 20px;
+            overflow: hidden; /* Prevents scrollbars on the container itself */
+        }
+        #slide-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #navigation {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #slide-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="slide-container">
+        <iframe id="slide-frame" src="01.html" title="Slide Content"></iframe>
+    </div>
+
+    <div id="navigation">
+        <button id="prev-button" onclick="changeSlide(-1)">Previous</button>
+        <button id="next-button" onclick="changeSlide(1)">Next</button>
+    </div>
+    <div id="slide-info">
+        Slide <span id="current-slide">1</span> of <span id="total-slides">12</span>
+    </div>
+
+    <script>
+        const totalSlides = 12;
+        let currentSlide = 1;
+        const slideFrame = document.getElementById('slide-frame');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        const currentSlideSpan = document.getElementById('current-slide');
+        const totalSlidesSpan = document.getElementById('total-slides');
+
+        function formatSlideNumber(num) {
+            return num.toString().padStart(2, '0');
+        }
+
+        function loadSlide(slideNumber) {
+            if (slideNumber < 1 || slideNumber > totalSlides) {
+                console.error("Invalid slide number:", slideNumber);
+                return;
+            }
+            const fileName = `${formatSlideNumber(slideNumber)}.html`;
+            slideFrame.src = fileName;
+            currentSlide = slideNumber;
+            updateUI();
+        }
+
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 1 && newSlide <= totalSlides) {
+                loadSlide(newSlide);
+            }
+        }
+
+        function updateUI() {
+            currentSlideSpan.textContent = currentSlide;
+            totalSlidesSpan.textContent = totalSlides;
+            prevButton.disabled = currentSlide === 1;
+            nextButton.disabled = currentSlide === totalSlides;
+        }
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSlide(currentSlide); // Load the first slide initially
+        });
+
+        // Optional: Add keyboard navigation
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (event.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
+    </script>
+
+</body>
+</html>

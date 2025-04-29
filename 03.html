@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Must-Visit Destinations</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      position: relative;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+    .vietnam-accent {
+      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
+    }
+    .vietnam-bar {
+      background-color: #da251d;
+      height: 8px;
+      width: 100%;
+    }
+    .destination-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .destination-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .destination-image {
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .destination-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+    }
+    .badge-natural {
+      background-color: #38a169;
+    }
+    .badge-historical {
+      background-color: #d69e2e;
+    }
+    .badge-cultural {
+      background-color: #805ad5;
+    }
+    .destination-title {
+      position: relative;
+      display: inline-block;
+    }
+    .destination-title::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: #da251d;
+    }
+    .featured-banner {
+      position: absolute;
+      top: 15px;
+      left: -35px;
+      background-color: #e53e3e;
+      color: white;
+      padding: 5px 40px;
+      font-size: 12px;
+      transform: rotate(-45deg);
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container mx-auto vietnam-accent">
+    <div class="vietnam-bar"></div>
+    
+    <div class="p-8">
+      <!-- Title Section -->
+      <header class="mb-6 flex items-center">
+        <div>
+          <h1 class="text-4xl font-bold text-gray-800 mb-2">Must-Visit Destinations</h1>
+          <p class="text-lg text-gray-600">Discover Vietnam's most iconic and breathtaking attractions</p>
+        </div>
+        <div class="ml-auto">
+          <span class="text-sm font-medium bg-yellow-100 text-yellow-800 py-1 px-3 rounded-full">
+            <i class="fas fa-camera mr-1"></i>Photographer's Paradise
+          </span>
+        </div>
+      </header>
+      
+      <!-- Main Grid of Destinations -->
+      <div class="grid grid-cols-3 gap-6">
+        
+        <!-- Ha Long Bay -->
+        <div class="destination-card bg-white relative">
+          <div class="featured-banner">UNESCO Heritage</div>
+          <img src="https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/w_1120,h_650/v1622570809/14-Halong-Bay-Tourist-Attractions-Lan-Ha/14-Halong-Bay-Tourist-Attractions-Lan-Ha.jpg" alt="Ha Long Bay" class="destination-image">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2 destination-title">Ha Long Bay</h3>
+            <span class="destination-badge badge-natural">Natural Wonder</span>
+            <p class="text-sm text-gray-600 my-2">Emerald waters dotted with over 1,600 limestone islands and islets covered in lush vegetation.</p>
+            <div class="flex items-center text-xs text-gray-500 mt-3">
+              <div class="mr-3">
+                <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> North Vietnam
+              </div>
+              <div>
+                <i class="fas fa-clock text-blue-500 mr-1"></i> 2-3 days recommended
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hoi An Ancient Town -->
+        <div class="destination-card bg-white relative">
+          <img src="https://cdn.kimkim.com/files/a/images/253124ddbac42733c77ab72cd4a602dd860b9629/original-ea8ba809d5c990fda9cb7ef16199a8ad.jpg" alt="Hoi An Ancient Town" class="destination-image">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2 destination-title">Hoi An Ancient Town</h3>
+            <span class="destination-badge badge-historical">Historical</span>
+            <p class="text-sm text-gray-600 my-2">Enchanting old town with well-preserved architecture, colorful lanterns, and vibrant night markets.</p>
+            <div class="flex items-center text-xs text-gray-500 mt-3">
+              <div class="mr-3">
+                <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> Central Vietnam
+              </div>
+              <div>
+                <i class="fas fa-clock text-blue-500 mr-1"></i> 2-4 days recommended
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Phong Nha-Ke Bang National Park -->
+        <div class="destination-card bg-white relative">
+          <img src="https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/05/Intrepid-Travel-Peregrine-Adventures-vietnam_Phong-Nha-Ke-Bang_np_389487718.jpg" alt="Phong Nha-Ke Bang National Park" class="destination-image">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2 destination-title">Phong Nha-Ke Bang</h3>
+            <span class="destination-badge badge-natural">National Park</span>
+            <p class="text-sm text-gray-600 my-2">Home to the world's largest cave (Son Doong) and hundreds of cave systems with underground rivers.</p>
+            <div class="flex items-center text-xs text-gray-500 mt-3">
+              <div class="mr-3">
+                <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> Central Vietnam
+              </div>
+              <div>
+                <i class="fas fa-clock text-blue-500 mr-1"></i> 3-4 days recommended
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hanoi Old Quarter -->
+        <div class="destination-card bg-white relative">
+          <img src="https://www.onthegotours.com/repository/Halong-Bay-in-Vietnam--Southeast-Asia--On-The-Go-Tours-346281494514639.jpg" alt="Hanoi Old Quarter" class="destination-image">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2 destination-title">Hanoi Old Quarter</h3>
+            <span class="destination-badge badge-cultural">Cultural</span>
+            <p class="text-sm text-gray-600 my-2">Bustling historic district with narrow streets, traditional shops, and authentic street food scene.</p>
+            <div class="flex items-center text-xs text-gray-500 mt-3">
+              <div class="mr-3">
+                <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> North Vietnam
+              </div>
+              <div>
+                <i class="fas fa-clock text-blue-500 mr-1"></i> 2-3 days recommended
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mekong Delta -->
+        <div class="destination-card bg-white relative">
+          <img src="https://kampatour.com/pic/blog/ban-gioc-falls-2263_638726968955811425.jpg" alt="Mekong Delta" class="destination-image">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2 destination-title">Ban Gioc Waterfall</h3>
+            <span class="destination-badge badge-natural">Natural Wonder</span>
+            <p class="text-sm text-gray-600 my-2">Spectacular cascading waterfall on the border with China, surrounded by karst formations.</p>
+            <div class="flex items-center text-xs text-gray-500 mt-3">
+              <div class="mr-3">
+                <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> Northeast Vietnam
+              </div>
+              <div>
+                <i class="fas fa-clock text-blue-500 mr-1"></i> 1-2 days recommended
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Imperial City of Hue -->
+        <div class="destination-card bg-white relative">
+          <img src="https://centralvietnamguide.com/wp-content/uploads/2022/02/hue-citadel.jpg" alt="Imperial City of Hue" class="destination-image">
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2 destination-title">Imperial City of Hue</h3>
+            <span class="destination-badge badge-historical">Historical</span>
+            <p class="text-sm text-gray-600 my-2">Former imperial capital with impressive citadel, royal tombs, and cultural heritage.</p>
+            <div class="flex items-center text-xs text-gray-500 mt-3">
+              <div class="mr-3">
+                <i class="fas fa-map-marker-alt text-red-500 mr-1"></i> Central Vietnam
+              </div>
+              <div>
+                <i class="fas fa-clock text-blue-500 mr-1"></i> 2 days recommended
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Travel Tips Section -->
+      <div class="mt-5 bg-blue-50 rounded-lg p-3 flex items-center">
+        <div class="text-blue-700 text-3xl mr-4">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-blue-800">Travel Tip:</h3>
+          <p class="text-sm text-blue-600">Consider visiting during shoulder seasons (April-May or September-October) to avoid crowds while enjoying pleasant weather at most destinations.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+      <span>Vietnam Travel Presentation</span>
+      <span>Slide 3: Popular Tourist Attractions</span>
+    </div>
+  </div>
+</body>
+</html>

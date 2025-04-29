@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culinary Delights</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      position: relative;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+    .vietnam-accent {
+      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
+    }
+    .vietnam-bar {
+      background-color: #da251d;
+      height: 8px;
+      width: 100%;
+    }
+    .dish-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+      background-color: white;
+    }
+    .dish-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+    .dish-image {
+      height: 160px;
+      object-fit: cover;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    .dish-card:hover .dish-image {
+      transform: scale(1.05);
+    }
+    .image-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+    .region-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .north {
+      background-color: #3b82f6;
+    }
+    .central {
+      background-color: #8b5cf6;
+    }
+    .south {
+      background-color: #10b981;
+    }
+    .nationwide {
+      background-color: #f59e0b;
+    }
+    .ingredient-tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 6px;
+      margin: 2px;
+      border-radius: 20px;
+      background-color: #f3f4f6;
+      color: #4b5563;
+    }
+    .regional-map {
+      position: relative;
+      margin-top: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .region-marker {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      box-shadow: 0 0 0 2px white;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container mx-auto vietnam-accent">
+    <div class="vietnam-bar"></div>
+    
+    <div class="p-8">
+      <!-- Title Section -->
+      <header class="mb-5 flex items-center">
+        <div>
+          <h1 class="text-4xl font-bold text-gray-800 mb-1">Culinary Delights</h1>
+          <p class="text-lg text-gray-600">A flavorful journey through Vietnam's diverse and mouth-watering cuisine</p>
+        </div>
+        <div class="ml-auto">
+          <span class="text-sm font-medium bg-red-100 text-red-800 py-1 px-3 rounded-full">
+            <i class="fas fa-utensils mr-1"></i>Gastronomy Highlight
+          </span>
+        </div>
+      </header>
+      
+      <!-- Main Dishes Grid -->
+      <div class="grid grid-cols-3 gap-5">
+        <!-- Pho -->
+        <div class="dish-card">
+          <div class="image-wrapper">
+            <img src="https://thumbs.dreamstime.com/b/assorted-vietnamese-dishes-pho-bahn-mi-spring-rolls-top-down-composition-dinner-table-assorted-vietnamese-dishes-196932571.jpg" alt="Vietnamese Pho" class="dish-image">
+            <div class="region-badge north">Northern Origin</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Phở</h3>
+            <p class="text-xs text-gray-500 mb-2">Vietnam's iconic rice noodle soup featuring aromatic broth, fresh herbs, and tender meat (usually beef or chicken).</p>
+            <div class="flex flex-wrap mt-2">
+              <span class="ingredient-tag"><i class="fas fa-seedling text-green-500 mr-1"></i>Rice noodles</span>
+              <span class="ingredient-tag"><i class="fas fa-mortar-pestle text-amber-500 mr-1"></i>Star anise</span>
+              <span class="ingredient-tag"><i class="fas fa-leaf text-green-600 mr-1"></i>Fresh herbs</span>
+              <span class="ingredient-tag"><i class="fas fa-drumstick-bite text-red-500 mr-1"></i>Beef/Chicken</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Banh Mi -->
+        <div class="dish-card">
+          <div class="image-wrapper">
+            <img src="https://cookingismysport.com/wp-content/uploads/2016/05/banh-mi-spring-rolls3.jpg" alt="Banh Mi" class="dish-image">
+            <div class="region-badge central">Central Vietnam</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Bánh Mì</h3>
+            <p class="text-xs text-gray-500 mb-2">French-Vietnamese fusion sandwich with crispy baguette, savory fillings, pickled vegetables, and fresh cilantro.</p>
+            <div class="flex flex-wrap mt-2">
+              <span class="ingredient-tag"><i class="fas fa-bread-slice text-yellow-600 mr-1"></i>Baguette</span>
+              <span class="ingredient-tag"><i class="fas fa-carrot text-orange-500 mr-1"></i>Pickled vegetables</span>
+              <span class="ingredient-tag"><i class="fas fa-bacon text-red-400 mr-1"></i>Pork/Pâté</span>
+              <span class="ingredient-tag"><i class="fas fa-pepper-hot text-red-500 mr-1"></i>Chili</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Spring Rolls -->
+        <div class="dish-card">
+          <div class="image-wrapper">
+            <img src="https://healthynibblesandbits.com/wp-content/uploads/2020/02/Vietnamese-Spring-Rolls-FF.jpg" alt="Spring Rolls" class="dish-image">
+            <div class="region-badge nationwide">Nationwide</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Spring Rolls</h3>
+            <p class="text-xs text-gray-500 mb-2">Both fresh (gỏi cuốn) and fried (chả giò) varieties filled with vegetables, herbs, and protein, served with dipping sauce.</p>
+            <div class="flex flex-wrap mt-2">
+              <span class="ingredient-tag"><i class="fas fa-leaf text-green-500 mr-1"></i>Rice paper</span>
+              <span class="ingredient-tag"><i class="fas fa-fish text-blue-400 mr-1"></i>Shrimp/Pork</span>
+              <span class="ingredient-tag"><i class="fas fa-seedling text-green-600 mr-1"></i>Fresh herbs</span>
+              <span class="ingredient-tag"><i class="fas fa-wine-bottle text-yellow-700 mr-1"></i>Dipping sauce</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bun Cha -->
+        <div class="dish-card">
+          <div class="image-wrapper">
+            <img src="https://photos.tryotter.com/cdn-cgi/image/fit=crop,width=3840,quality=80/menu-photos/a17759a2-6e8c-4ece-b481-6e5861946535.jpeg" alt="Bun Cha" class="dish-image">
+            <div class="region-badge north">Northern Specialty</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Bún Chả</h3>
+            <p class="text-xs text-gray-500 mb-2">Hanoi specialty featuring grilled pork served with rice noodles, herbs, and a flavorful dipping sauce. Made famous by Anthony Bourdain and Barack Obama.</p>
+            <div class="flex flex-wrap mt-2">
+              <span class="ingredient-tag"><i class="fas fa-bacon text-red-500 mr-1"></i>Grilled pork</span>
+              <span class="ingredient-tag"><i class="fas fa-seedling text-green-500 mr-1"></i>Rice noodles</span>
+              <span class="ingredient-tag"><i class="fas fa-lemon text-yellow-400 mr-1"></i>Fish sauce</span>
+              <span class="ingredient-tag"><i class="fas fa-leaf text-green-600 mr-1"></i>Fresh herbs</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cao Lau -->
+        <div class="dish-card">
+          <div class="image-wrapper">
+            <img src="https://thumbs.dreamstime.com/z/assorted-vietnamese-dishes-pho-bahn-mi-spring-rolls-top-down-composition-dinner-table-assorted-vietnamese-dishes-196932754.jpg" alt="Cao Lau" class="dish-image">
+            <div class="region-badge central">Hoi An Specialty</div>
+          </div>
+          <div class="p-3">
+            <h3 class="text-lg font-bold mb-1">Cao Lầu</h3>
+            <p class="text-xs text-gray-500 mb-2">Unique to Hoi An with distinctive noodles, sliced pork, crispy croutons, bean sprouts, and fresh herbs. Traditionally made with water from the ancient Ba Le well.</p>
+            <div class="flex flex-wrap mt-2">
+              <span class="ingredient-tag"><i class="fas fa-seedling text-amber-600 mr-1"></i>Thick rice noodles</span>
+              <span class="ingredient-tag"><i class="fas fa-drumstick-bite text-red-500 mr-1"></i>Char siu pork</span>
+              <span class="ingredient-tag"><i class="fas fa-bread-slice text-yellow-700 mr-1"></i>Crispy croutons</span>
+              <span class="ingredient-tag"><i class="fas fa-leaf text-green-600 mr-1"></i>Local herbs</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Regional Cuisine Map -->
+        <div class="p-3 bg-gray-50 rounded-lg flex flex-col justify-between">
+          <h3 class="text-base font-bold mb-2">Regional Variations</h3>
+          <div class="flex flex-col text-xs space-y-3 text-gray-700">
+            <div class="flex items-start">
+              <div class="w-4 h-4 rounded-full bg-blue-500 mt-1 mr-2"></div>
+              <div>
+                <strong class="text-blue-700">Northern Cuisine:</strong>
+                <p>Subtle flavors, less spicy, more balanced. Emphasis on freshness with light seasoning.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-4 h-4 rounded-full bg-purple-500 mt-1 mr-2"></div>
+              <div>
+                <strong class="text-purple-700">Central Cuisine:</strong>
+                <p>Spicier dishes with complex preparations. Imperial influence from Hue with elaborate presentation.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-4 h-4 rounded-full bg-green-500 mt-1 mr-2"></div>
+              <div>
+                <strong class="text-green-700">Southern Cuisine:</strong>
+                <p>Sweeter dishes with more herbs, tropical fruits, and influences from Cambodia and Thailand.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Culinary Facts Section -->
+      <div class="mt-4 bg-amber-50 rounded-lg p-3 flex items-start">
+        <div class="text-amber-700 text-3xl mr-4">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-amber-800 mb-2">Did You Know?</h3>
+          <div class="grid grid-cols-3 gap-3 text-sm">
+            <div class="flex items-start">
+              <i class="fas fa-balance-scale text-amber-600 mr-2 mt-1"></i>
+              <p class="text-amber-700">Vietnamese cuisine follows the five fundamental taste elements: spicy, sour, bitter, salty, and sweet</p>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-fish text-amber-600 mr-2 mt-1"></i>
+              <p class="text-amber-700">Fish sauce (nước mắm) is the key ingredient that gives many dishes their distinctive umami flavor</p>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-leaf text-amber-600 mr-2 mt-1"></i>
+              <p class="text-amber-700">Fresh herbs are essential in Vietnamese cooking, with most dishes garnished with a variety of aromatic herbs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+      <span>Vietnam Travel Presentation</span>
+      <span>Slide 9: Culinary Delights</span>
+    </div>
+  </div>
+</body>
+</html>

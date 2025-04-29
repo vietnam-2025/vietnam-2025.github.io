@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Trip</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      position: relative;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+    .vietnam-accent {
+      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
+    }
+    .vietnam-bar {
+      background-color: #da251d;
+      height: 8px;
+      width: 100%;
+    }
+    .hero-image {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .hero-image:hover img {
+      transform: scale(1.05);
+    }
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 20px;
+      color: white;
+    }
+    .reason-card {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .reason-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .icon-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 18px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #da251d 0%, #ff6b6b 100%);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(218, 37, 29, 0.3);
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(218, 37, 29, 0.4);
+    }
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      height: 130px;
+    }
+    .gallery-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .gallery-image:hover {
+      transform: scale(1.05);
+      z-index: 10;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container mx-auto vietnam-accent">
+    <div class="vietnam-bar"></div>
+    
+    <div class="p-8">
+      <!-- Title Section -->
+      <header class="mb-4 flex items-center">
+        <div>
+          <h1 class="text-4xl font-bold text-gray-800 mb-1">Plan Your Trip</h1>
+          <p class="text-lg text-gray-600">Discover why Vietnam should be your next destination</p>
+        </div>
+        <div class="ml-auto">
+          <span class="text-sm font-medium bg-red-100 text-red-800 py-1 px-3 rounded-full">
+            <i class="fas fa-plane-departure mr-1"></i>Your Next Adventure
+          </span>
+        </div>
+      </header>
+      
+      <!-- Hero Image -->
+      <div class="hero-image mb-5">
+        <img src="https://haivenu-vietnam.com/wp-content/uploads/2024/03/sapa-valleys-vietnam-e1710933019726.jpeg" alt="Vietnam Landscape">
+        <div class="overlay">
+          <h2 class="text-2xl font-bold mb-1">Experience the Wonder of Vietnam</h2>
+          <p class="text-sm opacity-90">A journey through breathtaking landscapes, vibrant culture, and unforgettable adventures</p>
+        </div>
+      </div>
+      
+      <!-- Why Visit Vietnam Section -->
+      <div class="grid grid-cols-3 gap-4 mb-5">
+        <div class="reason-card bg-blue-50 p-3">
+          <div class="flex items-center mb-2">
+            <div class="icon-circle bg-blue-100 text-blue-600">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <h3 class="font-bold text-blue-800">Natural Beauty</h3>
+          </div>
+          <p class="text-sm text-blue-700">From the limestone karsts of Halong Bay to the terraced rice fields of Sapa, Vietnam offers diverse landscapes that will take your breath away.</p>
+        </div>
+        
+        <div class="reason-card bg-amber-50 p-3">
+          <div class="flex items-center mb-2">
+            <div class="icon-circle bg-amber-100 text-amber-600">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3 class="font-bold text-amber-800">Culinary Delights</h3>
+          </div>
+          <p class="text-sm text-amber-700">Experience the explosion of flavors in Vietnamese cuisine – from steaming bowls of phở to crispy bánh mì sandwiches and fresh spring rolls.</p>
+        </div>
+        
+        <div class="reason-card bg-green-50 p-3">
+          <div class="flex items-center mb-2">
+            <div class="icon-circle bg-green-100 text-green-600">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <h3 class="font-bold text-green-800">Incredible Value</h3>
+          </div>
+          <p class="text-sm text-green-700">Your money goes much further in Vietnam, with luxury experiences, accommodation, and dining available at a fraction of Australian prices.</p>
+        </div>
+      </div>
+      
+      <!-- Photo Gallery -->
+      <div class="photo-gallery mb-5">
+        <div class="gallery-image">
+          <img src="https://www.travelvietnam.com/images/Blog/Son-Doong-Cave-Vietnam.jpg" alt="Son Doong Cave">
+        </div>
+        <div class="gallery-image">
+          <img src="https://centralvietnamguide.com/wp-content/uploads/2022/02/hue-citadel.jpg" alt="Hue Imperial City">
+        </div>
+        <div class="gallery-image">
+          <img src="https://localtoursvietnam.com/upload/source/ninh-binh-travel-1244-19.jpg" alt="Trang An">
+        </div>
+      </div>
+      
+      <!-- Call to Action Box -->
+      <div class="bg-gray-50 p-5 rounded-lg shadow-inner flex items-center justify-between">
+        <div class="w-2/3">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Ready to Experience Vietnam?</h3>
+          <p class="text-gray-600 mb-1">With its rich culture, breathtaking landscapes, delicious cuisine, and incredible affordability, Vietnam offers an unforgettable journey for every traveler.</p>
+          <ul class="text-sm text-gray-700 flex flex-wrap mt-3">
+            <li class="mr-5 mb-2 flex items-center"><i class="fas fa-check-circle text-green-500 mr-1"></i> Visa-friendly</li>
+            <li class="mr-5 mb-2 flex items-center"><i class="fas fa-check-circle text-green-500 mr-1"></i> Easy to navigate</li>
+            <li class="mr-5 mb-2 flex items-center"><i class="fas fa-check-circle text-green-500 mr-1"></i> Safe for travelers</li>
+            <li class="mr-5 mb-2 flex items-center"><i class="fas fa-check-circle text-green-500 mr-1"></i> Friendly locals</li>
+          </ul>
+        </div>
+        <div class="w-1/3 text-center">
+          <a href="#" class="cta-button inline-block mb-2">
+            <i class="fas fa-map-marked-alt mr-2"></i>Start Planning
+          </a>
+          <p class="text-sm text-gray-500">Join our discussion after the presentation</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+      <span>Vietnam Travel Presentation</span>
+      <span>Slide 13: Plan Your Trip</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical Travel Tips</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      position: relative;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+    .vietnam-accent {
+      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
+    }
+    .vietnam-bar {
+      background-color: #da251d;
+      height: 8px;
+      width: 100%;
+    }
+    .info-card {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    .icon-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 20px;
+    }
+    .tip-icon {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 10px;
+      color: white;
+    }
+    .chart-container {
+      position: relative;
+      height: 200px;
+    }
+    .visa-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 11px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container mx-auto vietnam-accent">
+    <div class="vietnam-bar"></div>
+    
+    <div class="p-8">
+      <!-- Title Section -->
+      <header class="mb-5 flex items-center">
+        <div>
+          <h1 class="text-4xl font-bold text-gray-800 mb-1">Practical Travel Tips</h1>
+          <p class="text-lg text-gray-600">Everything you need to know before visiting Vietnam</p>
+        </div>
+        <div class="ml-auto">
+          <span class="text-sm font-medium bg-blue-100 text-blue-800 py-1 px-3 rounded-full">
+            <i class="fas fa-info-circle mr-1"></i>Essential Information
+          </span>
+        </div>
+      </header>
+      
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Visa Requirements -->
+        <div class="info-card bg-white p-4 shadow-md">
+          <div class="flex items-center mb-3">
+            <div class="icon-circle bg-blue-100 text-blue-600">
+              <i class="fas fa-passport"></i>
+            </div>
+            <h3 class="text-xl font-bold">Visa Requirements</h3>
+          </div>
+          <div class="text-sm space-y-2 mb-3">
+            <p class="text-gray-700"><i class="fas fa-check-circle text-green-500 mr-1"></i> E-visas available for citizens of all countries - apply online</p>
+            <p class="text-gray-700"><i class="fas fa-check-circle text-green-500 mr-1"></i> Up to 90-day duration with multiple entry options</p>
+            <p class="text-gray-700"><i class="fas fa-check-circle text-green-500 mr-1"></i> Passport must have 6 months validity from entry date</p>
+          </div>
+          <div class="flex flex-wrap">
+            <span class="visa-badge bg-green-100 text-green-800"><i class="fas fa-globe-asia mr-1"></i> E-visa: $25 (single) / $50 (multiple)</span>
+            <span class="visa-badge bg-blue-100 text-blue-800"><i class="fas fa-clock mr-1"></i> Processing time: 3-5 business days</span>
+            <span class="visa-badge bg-yellow-100 text-yellow-800"><i class="fas fa-laptop mr-1"></i> Apply: vietnam.travel/plan-your-trip/visa-requirements</span>
+          </div>
+        </div>
+        
+        <!-- Best Time to Visit -->
+        <div class="info-card bg-white p-4 shadow-md">
+          <div class="flex items-center mb-3">
+            <div class="icon-circle bg-yellow-100 text-yellow-600">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="text-xl font-bold">Best Time to Visit</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="seasonChart"></canvas>
+          </div>
+          <div class="grid grid-cols-3 gap-2 mt-3 text-xs">
+            <div class="p-2 rounded bg-green-50 text-center">
+              <div class="font-bold text-green-700">North</div>
+              <div class="text-gray-600">Oct-Apr (Dry & Cool)</div>
+            </div>
+            <div class="p-2 rounded bg-amber-50 text-center">
+              <div class="font-bold text-amber-700">Central</div>
+              <div class="text-gray-600">Jan-Aug (Varied)</div>
+            </div>
+            <div class="p-2 rounded bg-blue-50 text-center">
+              <div class="font-bold text-blue-700">South</div>
+              <div class="text-gray-600">Dec-Apr (Dry Season)</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Health & Safety -->
+        <div class="info-card bg-white p-4 shadow-md">
+          <div class="flex items-center mb-3">
+            <div class="icon-circle bg-red-100 text-red-600">
+              <i class="fas fa-medkit"></i>
+            </div>
+            <h3 class="text-xl font-bold">Health & Safety</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex items-start">
+              <div class="tip-icon bg-red-500">
+                <i class="fas fa-pills"></i>
+              </div>
+              <div class="text-sm">
+                <div class="font-bold">Vaccinations</div>
+                <p class="text-xs text-gray-600">Hepatitis A & B, Typhoid, and routine vaccines recommended</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="tip-icon bg-blue-500">
+                <i class="fas fa-tint"></i>
+              </div>
+              <div class="text-sm">
+                <div class="font-bold">Water Safety</div>
+                <p class="text-xs text-gray-600">Drink bottled or purified water; avoid ice in rural areas</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="tip-icon bg-purple-500">
+                <i class="fas fa-bug"></i>
+              </div>
+              <div class="text-sm">
+                <div class="font-bold">Mosquito Protection</div>
+                <p class="text-xs text-gray-600">Use repellent; dengue fever risk exists year-round</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="tip-icon bg-green-500">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="text-sm">
+                <div class="font-bold">Travel Insurance</div>
+                <p class="text-xs text-gray-600">Highly recommended; cover medical evacuation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Transportation Options -->
+        <div class="info-card bg-white p-4 shadow-md">
+          <div class="flex items-center mb-3">
+            <div class="icon-circle bg-indigo-100 text-indigo-600">
+              <i class="fas fa-route"></i>
+            </div>
+            <h3 class="text-xl font-bold">Transportation Options</h3>
+          </div>
+          <div class="space-y-2">
+            <div class="flex justify-between items-center p-2 hover:bg-gray-50 rounded">
+              <div class="flex items-center">
+                <i class="fas fa-motorcycle text-xl text-orange-500 mr-3"></i>
+                <div>
+                  <div class="font-semibold">Motorbike/Scooter</div>
+                  <div class="text-xs text-gray-600">Popular & flexible, license required</div>
+                </div>
+              </div>
+              <div class="text-xs font-semibold bg-orange-100 text-orange-800 py-1 px-2 rounded">
+                $5-10/day
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-2 hover:bg-gray-50 rounded">
+              <div class="flex items-center">
+                <i class="fas fa-taxi text-xl text-yellow-500 mr-3"></i>
+                <div>
+                  <div class="font-semibold">Grab/Taxi</div>
+                  <div class="text-xs text-gray-600">Safe & convenient in major cities</div>
+                </div>
+              </div>
+              <div class="text-xs font-semibold bg-yellow-100 text-yellow-800 py-1 px-2 rounded">
+                $1-5 per ride
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-2 hover:bg-gray-50 rounded">
+              <div class="flex items-center">
+                <i class="fas fa-train text-xl text-blue-500 mr-3"></i>
+                <div>
+                  <div class="font-semibold">Trains</div>
+                  <div class="text-xs text-gray-600">Scenic routes, overnight options</div>
+                </div>
+              </div>
+              <div class="text-xs font-semibold bg-blue-100 text-blue-800 py-1 px-2 rounded">
+                $20-50 long distance
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-2 hover:bg-gray-50 rounded">
+              <div class="flex items-center">
+                <i class="fas fa-bus text-xl text-green-500 mr-3"></i>
+                <div>
+                  <div class="font-semibold">Sleeper Bus</div>
+                  <div class="text-xs text-gray-600">Budget-friendly long distance travel</div>
+                </div>
+              </div>
+              <div class="text-xs font-semibold bg-green-100 text-green-800 py-1 px-2 rounded">
+                $10-30 long distance
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Additional Tips Box -->
+      <div class="mt-4 bg-blue-50 p-3 rounded-lg flex items-start">
+        <div class="text-blue-700 text-3xl mr-4">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-blue-800 mb-2">Quick Tips:</h3>
+          <div class="grid grid-cols-3 gap-3 text-sm">
+            <div class="flex items-start">
+              <i class="fas fa-money-bill-wave text-blue-600 mr-2"></i>
+              <p class="text-blue-700">Currency: Vietnamese Đồng (VND). ATMs widely available in cities. $1 ≈ 23,000 VND</p>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-plug text-blue-600 mr-2"></i>
+              <p class="text-blue-700">Electricity: 220V, primarily Type A (two flat pins) and Type C (two round pins) sockets</p>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-wifi text-blue-600 mr-2"></i>
+              <p class="text-blue-700">Internet: Widely available. Local SIM cards affordable (~$5 for 30 days with data)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+      <span>Vietnam Travel Presentation</span>
+      <span>Slide 10: Practical Travel Tips</span>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('seasonChart').getContext('2d');
+      
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          datasets: [
+            {
+              label: 'North (Hanoi)',
+              data: [17, 18, 20, 24, 28, 30, 30, 30, 28, 25, 22, 18],
+              borderColor: 'rgb(34, 197, 94)',
+              backgroundColor: 'rgba(34, 197, 94, 0.1)',
+              fill: true,
+              tension: 0.3
+            },
+            {
+              label: 'Central (Da Nang)',
+              data: [22, 23, 25, 27, 29, 30, 30, 30, 29, 27, 25, 23],
+              borderColor: 'rgb(251, 191, 36)',
+              backgroundColor: 'rgba(251, 191, 36, 0.1)',
+              fill: true,
+              tension: 0.3
+            },
+            {
+              label: 'South (Ho Chi Minh)',
+              data: [26, 27, 28, 29, 29, 28, 28, 28, 28, 27, 27, 26],
+              borderColor: 'rgb(59, 130, 246)',
+              backgroundColor: 'rgba(59, 130, 246, 0.1)',
+              fill: true,
+              tension: 0.3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                boxWidth: 10,
+                font: {
+                  size: 10
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: 'Average Temperature (°C)',
+              font: {
+                size: 12
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + context.parsed.y + '°C';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              min: 15,
+              max: 35,
+              ticks: {
+                font: {
+                  size: 10
+                },
+                callback: function(value) {
+                  return value + '°C';
+                }
+              }
+            },
+            x: {
+              ticks: {
+                font: {
+                  size: 10
+                }
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

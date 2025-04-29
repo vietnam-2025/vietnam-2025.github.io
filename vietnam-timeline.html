@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vietnam History Timeline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #ff7a00;
+      --bg: #fff;
+      --text: #333;
+      --node-width: 300px;
+      --line-thickness: 3px; /* Slightly thinner line */
+      /* --connector-size: 16px; */ /* No longer used */
+      --spacing: 50px; /* Vertical space from icon edge to center */
+      --gap: 5rem;
+      --icon-size: 80px; /* Control icon size */
+      --icon-border: 5px; /* Control icon border */
+      
+      /* Event specific colors */
+      --color-1: #e74c3c; /* Red */
+      --color-2: #3498db; /* Blue */
+      --color-3: #2ecc71; /* Green */
+      --color-4: #9b59b6; /* Purple */
+      --color-5: #f1c40f; /* Yellow */
+      --color-6: #1abc9c; /* Turquoise */
+      
+      /* Base font size - new */
+      --base-font-size: 18px;
+    }
+
+    *, *:before, *:after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem 1rem;
+      line-height: 1.6; /* Improved readability */
+      font-size: var(--base-font-size); /* Added base font size */
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 600;
+      font-size: 2.5rem; /* Increased from 2.2rem */
+      margin-bottom: 3rem;
+    }
+
+    .timeline-container {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 1.5rem;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: var(--node-width);
+      column-gap: var(--gap);
+      width: max-content;
+      margin: 0 auto;
+      /* Vertical padding to accommodate elements pushed up/down */
+      padding: calc(var(--icon-size) + var(--spacing) + 50px) 0;
+    }
+
+    /* Remove the old central line style */
+    .timeline:before {
+      content: none;
+    }
+
+     /* Scrollbar styling */
+    .timeline-container::-webkit-scrollbar {
+        height: 8px;
+    }
+    .timeline-container::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+     .timeline-container::-webkit-scrollbar-track {
+         background: #eee;
+         border-radius: 4px;
+     }
+
+    .event {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      z-index: 1;
+    }
+
+    /* Position top events above the conceptual center */
+    .event.top {
+      transform: translateY(calc(-1 * var(--spacing)));
+    }
+
+    /* Position bottom events below the conceptual center */
+    .event.bottom {
+      flex-direction: column-reverse;
+      transform: translateY(var(--spacing));
+    }
+
+    .icon {
+      width: var(--icon-size);
+      height: var(--icon-size);
+      border: var(--icon-border) solid var(--event-color, var(--primary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Scale Font Awesome icon size relative to container */
+      font-size: calc(var(--icon-size) * 0.4);
+      color: var(--event-color, var(--primary));
+      background: var(--bg);
+      z-index: 3; /* Above connector */
+      position: relative; /* For positioning the connector */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* Modern shadow */
+      /* Space between icon and date/desc */
+      margin-bottom: 15px;
+    }
+
+    /* Adjust icon margin for bottom events */
+    .event.bottom .icon {
+        margin-bottom: 0;
+        margin-top: 15px; /* Space above icon */
+    }
+
+    Connector line from icon edge to the conceptual center
+    .icon:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: var(--line-thickness);
+        height: var(--spacing); /* Line fills the vertical space */
+        background: var(--event-color, var(--primary));
+        z-index: 2; /* Below icon */
+    }
+
+    /* Top events: connector extends down from icon bottom */
+    .event.top .icon:after {
+        top: 100%;
+    }
+
+    /* Bottom events: connector extends up from icon top */
+    .event.bottom .icon:after {
+        bottom: 100%;
+    }
+
+    .date {
+      padding: 0.5rem 1.1rem; /* Slightly adjusted padding */
+      background: var(--event-color, var(--primary));
+      color: #fff;
+      font-weight: 600;
+      border-radius: 999px; /* Pill shape */
+      font-size: 1rem; /* Increased from 0.9rem */
+      position: relative;
+      z-index: 1;
+      display: inline-flex; /* Fit content */
+      align-items: center;
+      /* Space between date and description/icon */
+      margin-bottom: 12px;
+    }
+
+     /* Adjust date margin for bottom events */
+    .event.bottom .date {
+        margin-bottom: 0;
+        margin-top: 12px; /* Space above date */
+    }
+
+    /* Remove old diamond connector style */
+    .date:after {
+      content: none;
+    }
+
+    .desc {
+      font-size: 1rem; /* Increased from 0.9rem */
+      line-height: 1.5;
+      max-width: calc(var(--node-width) - 40px); /* Prevent overflow */
+      color: #555; /* Slightly softer text color */
+    }
+
+    /* Define event colors */
+    .event-1 { --event-color: var(--color-1); }
+    .event-2 { --event-color: var(--color-2); }
+    .event-3 { --event-color: var(--color-3); }
+    .event-4 { --event-color: var(--color-4); }
+    .event-5 { --event-color: var(--color-5); }
+    .event-6 { --event-color: var(--color-6); }
+
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 2rem; /* Increased from 1.8rem */
+      }
+      :root {
+        --node-width: 240px;
+        --gap: 3rem;
+        --spacing: 40px; /* Reduce spacing */
+        --icon-size: 65px; /* Reduce icon size */
+        --icon-border: 4px;
+        --base-font-size: 16px; /* Mobile base font size */
+      }
+      /* Recalculate timeline padding */
+      .timeline {
+          padding: calc(var(--icon-size) + var(--spacing) + 40px) 0;
+      }
+      /* Icon font size scales automatically */
+      .date {
+        font-size: 0.9rem; /* Increased from 0.8rem */
+        padding: 0.4rem 0.9rem;
+        margin-bottom: 10px; /* Adjust spacing */
+      }
+      .event.bottom .date {
+          margin-top: 10px;
+          margin-bottom: 0;
+      }
+      .icon {
+          margin-bottom: 12px; /* Adjust spacing */
+      }
+      .event.bottom .icon {
+          margin-top: 12px;
+          margin-bottom: 0;
+      }
+      .desc {
+          font-size: 0.95rem; /* Increased from 0.85rem */
+          max-width: calc(var(--node-width) - 30px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Vietnam History Timeline</h1>
+
+  <div class="timeline-container">
+      <section class="timeline">
+        <article class="event top event-1">
+          <div class="icon"><i class="fa-solid fa-landmark"></i></div>
+          <span class="date">c. 2879 BCE – 938 CE</span>
+          <p class="desc"><strong>Ancient Era:</strong> Legendary Hong Bang period & Dong Son culture followed by 1,000+ years of Chinese rule resisted by the Trung Sisters.</p>
+        </article>
+
+        <article class="event bottom event-2">
+          <div class="icon"><i class="fa-solid fa-water"></i></div>
+          <span class="date">938 CE</span>
+          <p class="desc"><strong>Battle of Bach Dang:</strong> Ngo Quyen defeats the Southern Han fleet, ending direct Chinese control.</p>
+        </article>
+
+        <article class="event top event-3">
+          <div class="icon"><i class="fa-solid fa-crown"></i></div>
+          <span class="date">939 – 1858</span>
+          <p class="desc"><strong>Dynastic Period:</strong> Ngo, Dinh, Ly, Tran, Later Le & Tay Son dynasties.<br>• <em>Ly & Tran</em> (1009–1400): Golden age; repelled Mongols.<br>• <em>Later Le</em> (1428–1788): Longest dynasty.<br>• <em>Tay Son</em> (late 18th C): Brief reunification.</p>
+        </article>
+
+        <article class="event bottom event-4">
+          <div class="icon"><i class="fa-solid fa-city"></i></div>
+          <span class="date">1802 – 1945</span>
+          <p class="desc"><strong>Nguyen & Colonization:</strong><br>• 1802: Nguyen Dynasty begins.<br>• 1858–1887: French conquest forms Indochina.<br>• Early 20th C: Nationalism rises; Ho Chi Minh.</p>
+        </article>
+
+        <article class="event top event-5">
+          <div class="icon"><i class="fa-solid fa-helmet-safety"></i></div>
+          <span class="date">1945 – 1975</span>
+          <p class="desc"><strong>Wars & Division:</strong><br>• 1945: DRV proclaimed.<br>• 1946–1954: First Indochina War.<br>• 1954: Geneva split.<br>• 1955–1975: Vietnam War.</p>
+        </article>
+
+        <article class="event bottom event-6">
+          <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+          <span class="date">1975 – Present</span>
+          <p class="desc"><strong>Reunification & Modern:</strong><br>• 1975: Fall of Saigon.<br>• 1986: <em>Doi Moi</em> reforms.<br>• 1995: ASEAN membership.<br>• Today: Rapid growth.</p>
+        </article>
+      </section>
+  </div>
+
+</body>
+</html>

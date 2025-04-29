@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affordable Travel</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    .slide-container {
+      width: 1280px;
+      min-height: 720px;
+      position: relative;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+    .vietnam-accent {
+      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
+    }
+    .vietnam-bar {
+      background-color: #da251d;
+      height: 8px;
+      width: 100%;
+    }
+    .chart-container {
+      position: relative;
+      height: 240px;
+    }
+    .cost-card {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .cost-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .country-flag {
+      width: 30px;
+      height: 20px;
+      object-fit: cover;
+      margin-right: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .savings-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: #10b981;
+      color: white;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 14px;
+      transform: rotate(15deg);
+    }
+    .comparison-row {
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+    .comparison-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .item-name {
+      flex: 1;
+    }
+    .cost-bar {
+      height: 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container mx-auto vietnam-accent">
+    <div class="vietnam-bar"></div>
+    
+    <div class="p-8">
+      <!-- Title Section -->
+      <header class="mb-5 flex items-center">
+        <div>
+          <h1 class="text-4xl font-bold text-gray-800 mb-1">Affordable Travel</h1>
+          <p class="text-lg text-gray-600">How Vietnam offers incredible value compared to Australia</p>
+        </div>
+        <div class="ml-auto">
+          <span class="text-sm font-medium bg-green-100 text-green-800 py-1 px-3 rounded-full">
+            <i class="fas fa-wallet mr-1"></i>Budget-Friendly Destination
+          </span>
+        </div>
+      </header>
+      
+      <!-- Cost Comparison Section -->
+      <div class="flex gap-6 mb-5">
+        <!-- Cost Comparison Chart -->
+        <div class="w-1/2 bg-white p-4 rounded-lg shadow-md">
+          <h3 class="text-lg font-bold mb-3 flex items-center">
+            <i class="fas fa-chart-bar text-blue-500 mr-2"></i>Cost Comparison Overview
+          </h3>
+          <div class="chart-container">
+            <canvas id="costComparisonChart"></canvas>
+          </div>
+          <p class="text-xs text-center mt-2 text-gray-500">Vietnam is 67% cheaper than Australia overall</p>
+        </div>
+        
+        <!-- Cost Highlights -->
+        <div class="w-1/2 bg-white p-4 rounded-lg shadow-md">
+          <h3 class="text-lg font-bold mb-3 flex items-center">
+            <i class="fas fa-calculator text-green-500 mr-2"></i>Cost Breakdown
+          </h3>
+          
+          <div class="space-y-3">
+            <div class="comparison-row">
+              <div class="item-name font-medium text-sm">Restaurant Meal</div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Vietnam</div>
+                  <div class="font-semibold">$2-5</div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Australia</div>
+                  <div class="font-semibold">$15-30</div>
+                </div>
+              </div>
+              <div class="w-20 text-center text-xs text-green-600 font-semibold">Save 80%</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="item-name font-medium text-sm">Budget Hotel</div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Vietnam</div>
+                  <div class="font-semibold">$15-30</div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Australia</div>
+                  <div class="font-semibold">$80-150</div>
+                </div>
+              </div>
+              <div class="w-20 text-center text-xs text-green-600 font-semibold">Save 75%</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="item-name font-medium text-sm">Public Transport</div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Vietnam</div>
+                  <div class="font-semibold">$0.40-1.50</div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Australia</div>
+                  <div class="font-semibold">$3-5</div>
+                </div>
+              </div>
+              <div class="w-20 text-center text-xs text-green-600 font-semibold">Save 70%</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="item-name font-medium text-sm">Coffee</div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Vietnam</div>
+                  <div class="font-semibold">$1-2</div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Australia</div>
+                  <div class="font-semibold">$4-5</div>
+                </div>
+              </div>
+              <div class="w-20 text-center text-xs text-green-600 font-semibold">Save 65%</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="item-name font-medium text-sm">Tourist Attractions</div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Vietnam</div>
+                  <div class="font-semibold">$2-10</div>
+                </div>
+              </div>
+              <div class="comparison-item">
+                <div>
+                  <div class="text-xs text-gray-500">Australia</div>
+                  <div class="font-semibold">$15-40</div>
+                </div>
+              </div>
+              <div class="w-20 text-center text-xs text-green-600 font-semibold">Save 75%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Daily Budget Section -->
+      <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="cost-card bg-blue-50 p-3 relative">
+          <div class="savings-badge">67% <br>Less</div>
+          <h4 class="font-semibold mb-2">Budget Traveler</h4>
+          <div class="flex items-center mb-3">
+            <div class="w-1/2 flex items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/200px-Flag_of_Vietnam.svg.png" alt="Vietnam Flag" class="country-flag">
+              <span class="text-lg font-bold">$25-35</span>
+            </div>
+            <div class="w-1/2 flex items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg" alt="Australia Flag" class="country-flag">
+              <span class="text-lg font-bold">$75-100</span>
+            </div>
+          </div>
+          <div class="text-xs text-gray-600">
+            <p>Hostels or budget guesthouses, street food, public transportation, free or low-cost activities</p>
+          </div>
+        </div>
+        
+        <div class="cost-card bg-purple-50 p-3 relative">
+          <div class="savings-badge">65% <br>Less</div>
+          <h4 class="font-semibold mb-2">Mid-Range Traveler</h4>
+          <div class="flex items-center mb-3">
+            <div class="w-1/2 flex items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/200px-Flag_of_Vietnam.svg.png" alt="Vietnam Flag" class="country-flag">
+              <span class="text-lg font-bold">$50-80</span>
+            </div>
+            <div class="w-1/2 flex items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg" alt="Australia Flag" class="country-flag">
+              <span class="text-lg font-bold">$150-250</span>
+            </div>
+          </div>
+          <div class="text-xs text-gray-600">
+            <p>3-star hotels, mix of restaurant meals and street food, some guided tours and activities</p>
+          </div>
+        </div>
+        
+        <div class="cost-card bg-amber-50 p-3 relative">
+          <div class="savings-badge">60% <br>Less</div>
+          <h4 class="font-semibold mb-2">Luxury Traveler</h4>
+          <div class="flex items-center mb-3">
+            <div class="w-1/2 flex items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/200px-Flag_of_Vietnam.svg.png" alt="Vietnam Flag" class="country-flag">
+              <span class="text-lg font-bold">$150+</span>
+            </div>
+            <div class="w-1/2 flex items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg" alt="Australia Flag" class="country-flag">
+              <span class="text-lg font-bold">$350+</span>
+            </div>
+          </div>
+          <div class="text-xs text-gray-600">
+            <p>4-5 star hotels, fine dining, private tours, premium experiences and activities</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Money-Saving Tips -->
+      <div class="bg-green-50 p-3 rounded-lg flex items-start">
+        <div class="text-green-700 text-3xl mr-4">
+          <i class="fas fa-piggy-bank"></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-green-800 mb-1">Money-Saving Tips:</h3>
+          <div class="grid grid-cols-4 gap-3 text-sm">
+            <div class="flex items-start">
+              <i class="fas fa-utensils text-green-600 mr-2 mt-1"></i>
+              <p class="text-green-700">Eat where locals eat - street food is delicious, authentic and incredibly affordable</p>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-bed text-green-600 mr-2 mt-1"></i>
+              <p class="text-green-700">Book homestays or guesthouses for better rates and authentic experiences</p>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-handshake text-green-600 mr-2 mt-1"></i>
+              <p class="text-green-700">Negotiate prices at markets and with local tour providers - always politely</p>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-shopping-bag text-green-600 mr-2 mt-1"></i>
+              <p class="text-green-700">Visit local markets for souvenirs instead of tourist shops for better prices</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+      <span>Vietnam Travel Presentation</span>
+      <span>Slide 11: Affordable Travel</span>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('costComparisonChart').getContext('2d');
+      
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Overall Cost', 'Restaurants', 'Groceries', 'Accommodation', 'Transportation', 'Entertainment'],
+          datasets: [
+            {
+              label: 'Vietnam',
+              data: [100, 100, 100, 100, 100, 100],
+              backgroundColor: 'rgba(218, 37, 29, 0.7)',
+              borderColor: 'rgba(218, 37, 29, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Australia',
+              data: [440, 560, 230, 380, 320, 290],
+              backgroundColor: 'rgba(0, 116, 217, 0.7)',
+              borderColor: 'rgba(0, 116, 217, 1)',
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                boxWidth: 12,
+                font: {
+                  size: 11
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: 'Australia vs Vietnam Cost Ratio (Vietnam = 100)',
+              font: {
+                size: 14
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  if (context.dataset.label === 'Vietnam') {
+                    return 'Vietnam: Base cost (100%)';
+                  } else {
+                    return 'Australia: ' + context.raw + '% of Vietnam cost';
+                  }
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: {
+                font: {
+                  size: 11
+                },
+                callback: function(value) {
+                  return value + '%';
+                }
+              },
+              title: {
+                display: true,
+                text: 'Relative Cost (Vietnam = 100%)'
+              }
+            },
+            y: {
+              ticks: {
+                font: {
+                  size: 11
+                }
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
