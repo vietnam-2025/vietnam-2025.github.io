@@ -1,98 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rich History and Vibrant Culture</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-    }
-    .slide-container {
-      width: 1280px;
-      min-height: 720px;
-      position: relative;
-      background: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-    }
-    .vietnam-accent {
-      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
-    }
-    .vietnam-bar {
-      background-color: #da251d;
-      height: 8px;
-      width: 100%;
-    }
-    .culture-image {
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: transform 0.3s;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .culture-container:hover .culture-image {
-      transform: scale(1.03);
-    }
-    .timeline-container {
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .festival-card {
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-      transition: transform 0.2s;
-    }
-    .festival-card:hover {
-      transform: translateY(-5px);
-    }
-    .festival-image {
-      height: 100px;
-      object-fit: cover;
-    }
-    .yellow-accent {
-      color: #ffcd00;
-    }
-  </style>
-</head>
-<body>
-  <div class="slide-container mx-auto vietnam-accent">
-    <div class="vietnam-bar"></div>
-    
-    <div class="p-8">
-      <!-- Title Section -->
-      <header class="mb-4 flex items-center">
-        <div>
-          <h1 class="text-4xl font-bold text-gray-800 mb-1">Rich History and Vibrant Culture</h1>
-          <p class="text-lg text-gray-600">Thousands of years of tradition woven into the fabric of modern Vietnam</p>
-        </div>
-        <div class="ml-auto">
-          <img src="https://lirp.cdn-website.com/9c039c04/dms3rep/multi/opt/Top-8-traditional-festivals-in-northern-Vietnam-1920w.jpg" alt="Vietnamese Festival" class="h-16 rounded-md shadow">
-        </div>
-      </header>
-      
-      <div class="flex flex-col md:flex-row">
-        <!-- Historical Timeline Column -->
-        <div class="w-full md:w-1/2 pr-4 mb-6 md:mb-0">
-          <h2 class="text-xl font-semibold mb-3 flex items-center">
-            <i class="fas fa-history text-red-600 mr-2"></i>Historical Timeline
-          </h2>
-          
-          <div class="timeline-container">
-            <pre class="mermaid">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rich History and Vibrant Culture</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+		<style>
+			body {
+				font-family: "Roboto", sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f8f9fa;
+			}
+			.main-content-panel {
+				max-width: 1280px; /* Maintain a max width for readability */
+				margin: 0 auto; /* Center the panel */
+				background: white;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				overflow: hidden; /* Contains floats/margins */
+				padding-bottom: 40px; /* Space above footer */
+				position: relative; /* For footer positioning */
+				min-height: 100vh; /* Ensure it takes at least full viewport height */
+			}
+			h1 {
+				font-family: "Playfair Display", serif;
+			}
+			.timeline-section {
+				border: 1px solid #e2e8f0; /* Example border */
+				border-radius: 8px;
+				padding: 1.5rem; /* p-6 */
+				margin-top: 1.5rem; /* mt-6 */
+				margin-bottom: 2rem; /* mb-8 */
+				background-color: #f9f9f9;
+			}
+			.timeline-container {
+				/* Removed background/padding from original, now handled by section */
+			}
+			.mermaid svg {
+				/* Center the Mermaid SVG */
+				display: block;
+				margin: 0 auto;
+			}
+			.cultural-box {
+				background-color: #f9fafb; /* bg-gray-50 */
+				border: 1px solid #e5e7eb; /* border-gray-200 */
+				border-radius: 0.5rem; /* rounded-lg */
+				padding: 1rem; /* p-4 */
+				box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+			}
+			.festival-card {
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+				transition: transform 0.2s;
+				background-color: white;
+				display: flex;
+				flex-direction: column;
+				height: 100%; /* Make cards in a row equal height */
+			}
+			.festival-card:hover {
+				transform: translateY(-5px);
+			}
+			.festival-image {
+				height: 150px; /* Adjusted height */
+				object-fit: cover;
+				flex-shrink: 0; /* Prevent image shrinking */
+			}
+			.festival-text {
+				padding: 1rem; /* p-4 */
+				flex-grow: 1; /* Allow text area to grow */
+			}
+			.performance-image-container {
+				position: relative;
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+			}
+			.performance-image {
+				display: block; /* Remove extra space below image */
+				width: 100%;
+				height: 316px; /* Match combined height of other cards+padding approx */
+				object-fit: cover;
+			}
+			.performance-overlay {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+				padding: 1rem; /* p-4 */
+				color: white;
+			}
+			.footer-bar {
+				background-color: #374151; /* bg-gray-700 */
+				color: white;
+				padding: 0.75rem 2rem; /* p-3 px-8 */
+				text-align: left;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Main Content Panel -->
+		<div class="main-content-panel">
+			<div class="p-8">
+				<!-- Header Text Block -->
+				<header class="mb-6">
+					<h1 class="text-4xl font-bold text-gray-800 mb-1">
+						Rich History and Vibrant Culture
+					</h1>
+					<p class="text-lg text-gray-600">
+						Thousands of years of tradition woven into the fabric of modern
+						Vietnam
+					</p>
+				</header>
+
+				<!-- Historical Timeline Section -->
+				<section class="timeline-section">
+					<h2 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-history text-red-600 mr-2"></i>Historical Timeline
+					</h2>
+					<div class="timeline-container">
+						<pre class="mermaid">
               timeline
                 title Vietnamese History
                 939 : Independence from China
@@ -105,108 +149,177 @@
                 1986 : Economic reforms (Doi Moi)
                 2000s : Rapid modernization
             </pre>
-          </div>
-          
-          <div class="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200">
-            <h3 class="text-lg font-medium mb-2 text-yellow-800">Cultural Heritage</h3>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-start">
-                <i class="fas fa-landmark text-yellow-700 mt-1 mr-2"></i>
-                <div>
-                  <span class="font-semibold">Confucian Influence</span>: Emphasis on education, respect for elders, and strong family values
-                </div>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-hands text-yellow-700 mt-1 mr-2"></i>
-                <div>
-                  <span class="font-semibold">Buddhist Practices</span>: Influences daily life with principles of compassion and mindfulness
-                </div>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-theater-masks text-yellow-700 mt-1 mr-2"></i>
-                <div>
-                  <span class="font-semibold">Traditional Arts</span>: Water puppetry, folk music (ca trù, quan họ), and calligraphy
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- Cultural Elements Column -->
-        <div class="w-full md:w-1/2 pl-4">
-          <h2 class="text-xl font-semibold mb-3 flex items-center">
-            <i class="fas fa-drum text-green-600 mr-2"></i>Vibrant Traditions & Festivals
-          </h2>
-          
-          <div class="grid grid-cols-2 gap-4 mb-4">
-            <div class="festival-card bg-white">
-              <img src="https://vietnam.travel/sites/default/files/inline-images/Tet%20holiday%20Vietnam.jpg" alt="Tet Festival" class="festival-image w-full">
-              <div class="p-3">
-                <h4 class="font-semibold text-md">Tết (Lunar New Year)</h4>
-                <p class="text-xs text-gray-600">The most important celebration with family reunions, special foods, and traditions to welcome good fortune</p>
-              </div>
-            </div>
-            
-            <div class="festival-card bg-white">
-              <img src="https://vilandtravel.com/wp-content/uploads/2024/07/lim-festival-vietnam.jpg" alt="Mid-Autumn Festival" class="festival-image w-full">
-              <div class="p-3">
-                <h4 class="font-semibold text-md">Lim Festival</h4>
-                <p class="text-xs text-gray-600">Famous for "quan họ" folk singing performances and traditional games in northern Vietnam</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Culture Image Gallery -->
-          <div class="culture-container relative mb-4">
-            <img src="https://www.travelvietnam.com/images/photos/vietnam/fan-dance-vietnam.jpg" alt="Traditional Fan Dance" class="culture-image w-full h-40 object-cover">
-            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 text-white">
-              <h4 class="text-lg font-semibold">Traditional Performance</h4>
-              <p class="text-sm">Fan dance representing grace and traditional storytelling</p>
-            </div>
-          </div>
-          
-          <!-- Cultural Facts Box -->
-          <div class="bg-white p-4 shadow-md rounded">
-            <h3 class="text-lg font-semibold mb-2 flex items-center">
-              <i class="fas fa-lightbulb text-amber-500 mr-2"></i>Cultural Facts
-            </h3>
-            <div class="grid grid-cols-2 gap-3 text-sm">
-              <div class="flex items-start">
-                <i class="fas fa-utensils text-red-500 mr-2 mt-1"></i>
-                <p><span class="font-semibold">Culinary Heritage</span>: Regional cuisines influenced by geography and history</p>
-              </div>
-              <div class="flex items-start">
-                <i class="fas fa-tshirt text-blue-500 mr-2 mt-1"></i>
-                <p><span class="font-semibold">Traditional Dress</span>: The áo dài symbolizes elegance and national identity</p>
-              </div>
-              <div class="flex items-start">
-                <i class="fas fa-language text-green-500 mr-2 mt-1"></i>
-                <p><span class="font-semibold">Language</span>: Vietnamese with 6 tones and regional dialects</p>
-              </div>
-              <div class="flex items-start">
-                <i class="fas fa-handshake text-purple-500 mr-2 mt-1"></i>
-                <p><span class="font-semibold">Social Values</span>: Harmony, respect, and community solidarity</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
-      <span>Vietnam Travel Presentation</span>
-      <span>Slide 2: History and Culture</span>
-    </div>
-  </div>
+					</div>
+				</section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      mermaid.initialize({
-        startOnLoad: true,
-        theme: 'neutral',
-        fontSize: 14
-      });
-    });
-  </script>
-</body>
+				<!-- Middle Section: Cultural Heritage & Facts -->
+				<section class="grid md:grid-cols-2 gap-8 mb-8">
+					<!-- Cultural Heritage Box (Left Column) -->
+					<div class="cultural-box">
+						<h3
+							class="text-lg font-medium mb-3 text-yellow-800 flex items-center"
+						>
+							<i class="fas fa-landmark text-yellow-700 mr-2"></i>Cultural
+							Heritage
+						</h3>
+						<ul class="space-y-3 text-sm">
+							<li class="flex items-start">
+								<i
+									class="fas fa-book-open text-yellow-700 mt-1 mr-2 flex-shrink-0 w-4 text-center"
+								></i>
+								<div>
+									<span class="font-semibold">Confucian Influence</span>:
+									Emphasis on education, respect for elders, and strong family
+									values
+								</div>
+							</li>
+							<li class="flex items-start">
+								<i
+									class="fas fa-praying-hands text-yellow-700 mt-1 mr-2 flex-shrink-0 w-4 text-center"
+								></i>
+								<div>
+									<span class="font-semibold">Buddhist Practices</span>:
+									Influences daily life with principles of compassion and
+									mindfulness
+								</div>
+							</li>
+							<li class="flex items-start">
+								<i
+									class="fas fa-theater-masks text-yellow-700 mt-1 mr-2 flex-shrink-0 w-4 text-center"
+								></i>
+								<div>
+									<span class="font-semibold">Traditional Arts</span>: Water
+									puppetry, folk music (ca trù, quan họ), and calligraphy
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Cultural Facts Box (Right Column) -->
+					<div class="cultural-box">
+						<h3 class="text-lg font-semibold mb-3 flex items-center">
+							<i class="fas fa-lightbulb text-amber-500 mr-2"></i>Cultural Facts
+						</h3>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+							<div class="flex items-start">
+								<i
+									class="fas fa-utensils text-red-500 mr-2 mt-1 flex-shrink-0 w-4 text-center"
+								></i>
+								<p>
+									<span class="font-semibold">Culinary Heritage</span>: Regional
+									cuisines influenced by geography and history
+								</p>
+							</div>
+							<div class="flex items-start">
+								<i
+									class="fas fa-tshirt text-blue-500 mr-2 mt-1 flex-shrink-0 w-4 text-center"
+								></i>
+								<p>
+									<span class="font-semibold">Traditional Dress</span>: The áo
+									dài symbolizes elegance and national identity
+								</p>
+							</div>
+							<div class="flex items-start">
+								<i
+									class="fas fa-language text-green-500 mr-2 mt-1 flex-shrink-0 w-4 text-center"
+								></i>
+								<p>
+									<span class="font-semibold">Language</span>: Vietnamese with 6
+									tones and regional dialects
+								</p>
+							</div>
+							<div class="flex items-start">
+								<i
+									class="fas fa-handshake text-purple-500 mr-2 mt-1 flex-shrink-0 w-4 text-center"
+								></i>
+								<p>
+									<span class="font-semibold">Social Values</span>: Harmony,
+									respect, and community solidarity
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Vibrant Traditions & Festivals Section -->
+				<section>
+					<h2 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-drum text-green-600 mr-2"></i>Vibrant Traditions &
+						Festivals
+					</h2>
+					<div class="grid md:grid-cols-3 gap-6">
+						<!-- Left Element: Tết -->
+						<div class="festival-card">
+							<img
+								src="https://vietnam.travel/sites/default/files/inline-images/Tet%20holiday%20Vietnam.jpg"
+								alt="Tet Festival"
+								class="festival-image w-full"
+							/>
+							<div class="festival-text">
+								<h4 class="font-semibold text-md mb-1">Tết (Lunar New Year)</h4>
+								<p class="text-xs text-gray-600">
+									The most important celebration with family reunions, special
+									foods, and traditions to welcome good fortune.
+								</p>
+							</div>
+						</div>
+
+						<!-- Middle Element: Lim Festival -->
+						<div class="festival-card">
+							<img
+								src="https://vilandtravel.com/wp-content/uploads/2024/07/lim-festival-vietnam.jpg"
+								alt="Lim Festival"
+								class="festival-image w-full"
+							/>
+							<div class="festival-text">
+								<h4 class="font-semibold text-md mb-1">Lim Festival</h4>
+								<p class="text-xs text-gray-600">
+									Famous for "quan họ" folk singing performances and traditional
+									games in northern Vietnam.
+								</p>
+							</div>
+						</div>
+
+						<!-- Right Element: Traditional Performance -->
+						<div class="performance-image-container">
+							<img
+								src="https://www.travelvietnam.com/images/photos/vietnam/fan-dance-vietnam.jpg"
+								alt="Traditional Fan Dance"
+								class="performance-image"
+							/>
+							<div class="performance-overlay">
+								<h4 class="text-lg font-semibold">Traditional Performance</h4>
+								<p class="text-sm">
+									Fan dance representing grace and traditional storytelling.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Footer Bar -->
+			<footer class="footer-bar text-sm">
+				<span>Vietnam Travel Presentation - History and Culture</span>
+			</footer>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				mermaid.initialize({
+					startOnLoad: true,
+					theme: "neutral", // Consider 'base' or 'default' for better contrast if needed
+					timeline: {
+						// Mermaid timeline specific config if needed
+					},
+					themeVariables: {
+						// Customize colors if default theme isn't ideal
+						fontSize: "16px", // Increase font size for timeline text
+					},
+				});
+				// Optional: Force redraw if layout shifts affect Mermaid
+				// mermaid.contentLoaded();
+			});
+		</script>
+	</body>
 </html>
