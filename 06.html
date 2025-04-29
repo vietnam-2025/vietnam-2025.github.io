@@ -1,289 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nature's Marvels</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-    }
-    .slide-container {
-      width: 1280px;
-      min-height: 720px;
-      position: relative;
-      background: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-    }
-    .vietnam-accent {
-      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
-    }
-    .vietnam-bar {
-      background-color: #da251d;
-      height: 8px;
-      width: 100%;
-    }
-    .wonder-card {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      height: 100%;
-      background-color: white;
-    }
-    .wonder-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-    .wonder-image {
-      height: 180px;
-      object-fit: cover;
-      width: 100%;
-      transition: transform 0.4s ease;
-    }
-    .wonder-card:hover .wonder-image {
-      transform: scale(1.05);
-    }
-    .image-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
-    .location-tag {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 500;
-    }
-    .stat-box {
-      display: flex;
-      align-items: center;
-      padding: 8px;
-      background-color: rgba(241, 245, 249, 0.7);
-      border-radius: 8px;
-      margin-top: 8px;
-    }
-    .stat-icon {
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      margin-right: 10px;
-      color: white;
-    }
-    .fact-badge {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 12px;
-      display: inline-block;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      font-weight: 500;
-    }
-  </style>
-</head>
-<body>
-  <div class="slide-container mx-auto vietnam-accent">
-    <div class="vietnam-bar"></div>
-    
-    <div class="p-8">
-      <!-- Title Section -->
-      <header class="mb-6 flex items-center">
-        <div>
-          <h1 class="text-4xl font-bold text-gray-800 mb-2">Nature's Marvels</h1>
-          <p class="text-lg text-gray-600">Explore Vietnam's most awe-inspiring natural wonders</p>
-        </div>
-        <div class="ml-auto">
-          <span class="text-sm font-medium bg-green-100 text-green-800 py-1 px-3 rounded-full">
-            <i class="fas fa-leaf mr-1"></i>Biodiversity Hotspot
-          </span>
-        </div>
-      </header>
-      
-      <!-- Natural Wonders Grid -->
-      <div class="grid grid-cols-2 gap-6">
-        
-        <!-- Son Doong Cave -->
-        <div class="wonder-card">
-          <div class="image-wrapper">
-            <img src="https://www.travelvietnam.com/images/Blog/Son-Doong-Cave-Vietnam.jpg" alt="Son Doong Cave" class="wonder-image">
-            <div class="location-tag"><i class="fas fa-map-marker-alt mr-1"></i>Phong Nha-Ke Bang</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-1">Son Doong Cave</h3>
-            <p class="text-xs text-green-700 mb-2">
-              <i class="fas fa-award mr-1"></i>World's largest natural cave
-            </p>
-            <p class="text-sm text-gray-600 mb-2">Discovered in 1991 but only explored in 2009, this massive cave system contains its own ecosystem with unique wildlife, jungle, and even a river.</p>
-            
-            <div class="stat-box">
-              <div class="stat-icon bg-blue-500">
-                <i class="fas fa-ruler-vertical"></i>
-              </div>
-              <div class="text-xs">
-                <div class="font-bold text-gray-700">Impressive Dimensions</div>
-                <div class="text-gray-600">200m high, 150m wide, 5km long</div>
-              </div>
-            </div>
-            
-            <div class="mt-2">
-              <span class="fact-badge bg-green-100 text-green-700">
-                <i class="fas fa-tree mr-1"></i>Interior jungle
-              </span>
-              <span class="fact-badge bg-blue-100 text-blue-700">
-                <i class="fas fa-cloud mr-1"></i>Weather system
-              </span>
-              <span class="fact-badge bg-purple-100 text-purple-700">
-                <i class="fas fa-hiking mr-1"></i>Limited expeditions
-              </span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Ban Gioc Waterfall -->
-        <div class="wonder-card">
-          <div class="image-wrapper">
-            <img src="https://kampatour.com/pic/blog/d625796d-bc3e-4fb7-b5ee-1c96178ca9e1.jpg" alt="Ban Gioc Waterfall" class="wonder-image">
-            <div class="location-tag"><i class="fas fa-map-marker-alt mr-1"></i>Cao Bang Province</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-1">Ban Gioc Waterfall</h3>
-            <p class="text-xs text-green-700 mb-2">
-              <i class="fas fa-border-all mr-1"></i>Shared with China (Detian Falls)
-            </p>
-            <p class="text-sm text-gray-600 mb-2">One of Southeast Asia's largest waterfalls, spanning the border between Vietnam and China with multiple cascading tiers amid lush karst landscapes.</p>
-            
-            <div class="stat-box">
-              <div class="stat-icon bg-cyan-500">
-                <i class="fas fa-water"></i>
-              </div>
-              <div class="text-xs">
-                <div class="font-bold text-gray-700">Spectacular Scale</div>
-                <div class="text-gray-600">300m wide with multiple tiers, 30m high</div>
-              </div>
-            </div>
-            
-            <div class="mt-2">
-              <span class="fact-badge bg-cyan-100 text-cyan-700">
-                <i class="fas fa-tint mr-1"></i>Most beautiful in rainy season
-              </span>
-              <span class="fact-badge bg-green-100 text-green-700">
-                <i class="fas fa-mountain mr-1"></i>Karst landscape
-              </span>
-              <span class="fact-badge bg-yellow-100 text-yellow-700">
-                <i class="fas fa-sun mr-1"></i>Magical at sunrise
-              </span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Mekong Delta -->
-        <div class="wonder-card">
-          <div class="image-wrapper">
-            <img src="https://static.vinwonders.com/production/vietnam-nature-2.jpeg" alt="Mekong Delta" class="wonder-image">
-            <div class="location-tag"><i class="fas fa-map-marker-alt mr-1"></i>Southern Vietnam</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-1">Mekong Delta</h3>
-            <p class="text-xs text-green-700 mb-2">
-              <i class="fas fa-seedling mr-1"></i>Vietnam's rice bowl
-            </p>
-            <p class="text-sm text-gray-600 mb-2">A vast network of distributaries where the Mekong River approaches the sea, creating a lush agricultural region crisscrossed by countless waterways.</p>
-            
-            <div class="stat-box">
-              <div class="stat-icon bg-amber-500">
-                <i class="fas fa-chart-area"></i>
-              </div>
-              <div class="text-xs">
-                <div class="font-bold text-gray-700">Agricultural Powerhouse</div>
-                <div class="text-gray-600">40,000 km² area, producing 50% of Vietnam's rice</div>
-              </div>
-            </div>
-            
-            <div class="mt-2">
-              <span class="fact-badge bg-blue-100 text-blue-700">
-                <i class="fas fa-ship mr-1"></i>Floating markets
-              </span>
-              <span class="fact-badge bg-green-100 text-green-700">
-                <i class="fas fa-fish mr-1"></i>Abundant aquaculture
-              </span>
-              <span class="fact-badge bg-yellow-100 text-yellow-700">
-                <i class="fas fa-home mr-1"></i>Waterside communities
-              </span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Van Long Nature Reserve -->
-        <div class="wonder-card">
-          <div class="image-wrapper">
-            <img src="https://vietnam.travel/sites/default/files/inline-images/shutterstock_334886432.jpg" alt="Van Long Nature Reserve" class="wonder-image">
-            <div class="location-tag"><i class="fas fa-map-marker-alt mr-1"></i>Ninh Binh Province</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-1">Van Long Nature Reserve</h3>
-            <p class="text-xs text-green-700 mb-2">
-              <i class="fas fa-shield-alt mr-1"></i>Wildlife conservation area
-            </p>
-            <p class="text-sm text-gray-600 mb-2">Vietnam's largest wetland nature reserve with spectacular limestone karsts rising from tranquil waters, home to the endangered Delacour's langur.</p>
-            
-            <div class="stat-box">
-              <div class="stat-icon bg-green-600">
-                <i class="fas fa-paw"></i>
-              </div>
-              <div class="text-xs">
-                <div class="font-bold text-gray-700">Biodiversity Haven</div>
-                <div class="text-gray-600">32 mammal species, 100+ bird species including rare primates</div>
-              </div>
-            </div>
-            
-            <div class="mt-2">
-              <span class="fact-badge bg-green-100 text-green-700">
-                <i class="fas fa-feather-alt mr-1"></i>Bird watching paradise
-              </span>
-              <span class="fact-badge bg-blue-100 text-blue-700">
-                <i class="fas fa-camera mr-1"></i>Mirror-like waters
-              </span>
-              <span class="fact-badge bg-purple-100 text-purple-700">
-                <i class="fas fa-leaf mr-1"></i>Pristine wetlands
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Conservation Note -->
-      <div class="mt-5 bg-blue-50 p-4 rounded-lg flex items-start">
-        <div class="text-blue-700 text-3xl mr-4">
-          <i class="fas fa-info-circle"></i>
-        </div>
-        <div>
-          <h3 class="font-semibold text-blue-800">Conservation Efforts:</h3>
-          <p class="text-sm text-blue-700">Vietnam is actively working to protect these natural wonders through national parks, UNESCO designations, and eco-tourism initiatives. Visitors are encouraged to follow responsible tourism practices to help preserve these unique ecosystems for future generations.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
-      <span>Vietnam Travel Presentation</span>
-      <span>Slide 6: Nature's Marvels</span>
-    </div>
-  </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Nature's Marvels</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+		/>
+		<style>
+			body {
+				font-family: "Roboto", sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f8f9fa;
+			}
+			.slide-container {
+				width: 1280px;
+				min-height: 720px;
+				position: relative;
+				background: white;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+			}
+			h1 {
+				font-family: "Playfair Display", serif;
+			}
+			.vietnam-accent {
+				background: linear-gradient(
+					135deg,
+					rgba(218, 37, 29, 0.03) 0%,
+					rgba(255, 255, 0, 0.03) 100%
+				);
+			}
+			.vietnam-bar {
+				background-color: #da251d;
+				height: 8px;
+				width: 100%;
+			}
+			.wonder-card {
+				border-radius: 10px;
+				overflow: hidden;
+				box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+				transition: all 0.3s ease;
+				height: 100%;
+				background-color: white;
+			}
+			.wonder-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+			}
+			.wonder-image {
+				height: 180px;
+				object-fit: cover;
+				width: 100%;
+				transition: transform 0.4s ease;
+			}
+			.wonder-card:hover .wonder-image {
+				transform: scale(1.05);
+			}
+			.image-wrapper {
+				overflow: hidden;
+				position: relative;
+			}
+			.location-tag {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				background-color: rgba(0, 0, 0, 0.6);
+				color: white;
+				padding: 4px 10px;
+				border-radius: 4px;
+				font-size: 12px;
+				font-weight: 500;
+			}
+			.stat-box {
+				display: flex;
+				align-items: center;
+				padding: 8px;
+				background-color: rgba(241, 245, 249, 0.7);
+				border-radius: 8px;
+				margin-top: 8px;
+			}
+			.stat-icon {
+				width: 30px;
+				height: 30px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				margin-right: 10px;
+				color: white;
+			}
+			.fact-badge {
+				font-size: 11px;
+				padding: 3px 8px;
+				border-radius: 12px;
+				display: inline-block;
+				margin-right: 5px;
+				margin-bottom: 5px;
+				font-weight: 500;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slide-container mx-auto vietnam-accent">
+			<div class="vietnam-bar"></div>
+
+			<div class="p-8">
+				<!-- Title Section -->
+				<header class="mb-6 flex items-center">
+					<div>
+						<h1 class="text-4xl font-bold text-gray-800 mb-2">
+							Nature's Marvels
+						</h1>
+						<p class="text-lg text-gray-600">
+							Explore Vietnam's most awe-inspiring natural wonders
+						</p>
+					</div>
+					<div class="ml-auto">
+						<span
+							class="text-sm font-medium bg-green-100 text-green-800 py-1 px-3 rounded-full"
+						>
+							<i class="fas fa-leaf mr-1"></i>Biodiversity Hotspot
+						</span>
+					</div>
+				</header>
+
+				<!-- Natural Wonders Grid -->
+				<div class="grid grid-cols-2 gap-6">
+					<!-- Son Doong Cave -->
+					<div class="wonder-card">
+						<div class="image-wrapper">
+							<img
+								src="https://www.travelvietnam.com/images/Blog/Son-Doong-Cave-Vietnam.jpg"
+								alt="Son Doong Cave"
+								class="wonder-image"
+							/>
+							<div class="location-tag">
+								<i class="fas fa-map-marker-alt mr-1"></i>Phong Nha-Ke Bang
+							</div>
+						</div>
+						<div class="p-4">
+							<h3 class="text-xl font-bold mb-1">Son Doong Cave</h3>
+							<p class="text-xs text-green-700 mb-2">
+								<i class="fas fa-award mr-1"></i>World's largest natural cave
+							</p>
+							<p class="text-sm text-gray-600 mb-2">
+								Discovered in 1991 but only explored in 2009, this massive cave
+								system contains its own ecosystem with unique wildlife, jungle,
+								and even a river.
+							</p>
+
+							<div class="stat-box">
+								<div class="stat-icon bg-blue-500">
+									<i class="fas fa-ruler-vertical"></i>
+								</div>
+								<div class="text-xs">
+									<div class="font-bold text-gray-700">
+										Impressive Dimensions
+									</div>
+									<div class="text-gray-600">
+										200m high, 150m wide, 5km long
+									</div>
+								</div>
+							</div>
+
+							<div class="mt-2">
+								<span class="fact-badge bg-green-100 text-green-700">
+									<i class="fas fa-tree mr-1"></i>Interior jungle
+								</span>
+								<span class="fact-badge bg-blue-100 text-blue-700">
+									<i class="fas fa-cloud mr-1"></i>Weather system
+								</span>
+								<span class="fact-badge bg-purple-100 text-purple-700">
+									<i class="fas fa-hiking mr-1"></i>Limited expeditions
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Ban Gioc Waterfall -->
+					<div class="wonder-card">
+						<div class="image-wrapper">
+							<img
+								src="https://kampatour.com/pic/blog/d625796d-bc3e-4fb7-b5ee-1c96178ca9e1.jpg"
+								alt="Ban Gioc Waterfall"
+								class="wonder-image"
+							/>
+							<div class="location-tag">
+								<i class="fas fa-map-marker-alt mr-1"></i>Cao Bang Province
+							</div>
+						</div>
+						<div class="p-4">
+							<h3 class="text-xl font-bold mb-1">Ban Gioc Waterfall</h3>
+							<p class="text-xs text-green-700 mb-2">
+								<i class="fas fa-border-all mr-1"></i>Shared with China (Detian
+								Falls)
+							</p>
+							<p class="text-sm text-gray-600 mb-2">
+								One of Southeast Asia's largest waterfalls, spanning the border
+								between Vietnam and China with multiple cascading tiers amid
+								lush karst landscapes.
+							</p>
+
+							<div class="stat-box">
+								<div class="stat-icon bg-cyan-500">
+									<i class="fas fa-water"></i>
+								</div>
+								<div class="text-xs">
+									<div class="font-bold text-gray-700">Spectacular Scale</div>
+									<div class="text-gray-600">
+										300m wide with multiple tiers, 30m high
+									</div>
+								</div>
+							</div>
+
+							<div class="mt-2">
+								<span class="fact-badge bg-cyan-100 text-cyan-700">
+									<i class="fas fa-tint mr-1"></i>Most beautiful in rainy season
+								</span>
+								<span class="fact-badge bg-green-100 text-green-700">
+									<i class="fas fa-mountain mr-1"></i>Karst landscape
+								</span>
+								<span class="fact-badge bg-yellow-100 text-yellow-700">
+									<i class="fas fa-sun mr-1"></i>Magical at sunrise
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Mekong Delta -->
+					<div class="wonder-card">
+						<div class="image-wrapper">
+							<img
+								src="https://static.vinwonders.com/production/Floating-market-in-Mekong-Delta-5.jpg"
+								alt="Mekong Delta"
+								class="wonder-image"
+							/>
+							<div class="location-tag">
+								<i class="fas fa-map-marker-alt mr-1"></i>Southern Vietnam
+							</div>
+						</div>
+						<div class="p-4">
+							<h3 class="text-xl font-bold mb-1">Mekong Delta</h3>
+							<p class="text-xs text-green-700 mb-2">
+								<i class="fas fa-seedling mr-1"></i>Vietnam's rice bowl
+							</p>
+							<p class="text-sm text-gray-600 mb-2">
+								A vast network of distributaries where the Mekong River
+								approaches the sea, creating a lush agricultural region
+								crisscrossed by countless waterways.
+							</p>
+
+							<div class="stat-box">
+								<div class="stat-icon bg-amber-500">
+									<i class="fas fa-chart-area"></i>
+								</div>
+								<div class="text-xs">
+									<div class="font-bold text-gray-700">
+										Agricultural Powerhouse
+									</div>
+									<div class="text-gray-600">
+										40,000 km² area, producing 50% of Vietnam's rice
+									</div>
+								</div>
+							</div>
+
+							<div class="mt-2">
+								<span class="fact-badge bg-blue-100 text-blue-700">
+									<i class="fas fa-ship mr-1"></i>Floating markets
+								</span>
+								<span class="fact-badge bg-green-100 text-green-700">
+									<i class="fas fa-fish mr-1"></i>Abundant aquaculture
+								</span>
+								<span class="fact-badge bg-yellow-100 text-yellow-700">
+									<i class="fas fa-home mr-1"></i>Waterside communities
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Van Long Nature Reserve -->
+					<div class="wonder-card">
+						<div class="image-wrapper">
+							<img
+								src="https://vietnam.travel/sites/default/files/inline-images/shutterstock_334886432.jpg"
+								alt="Van Long Nature Reserve"
+								class="wonder-image"
+							/>
+							<div class="location-tag">
+								<i class="fas fa-map-marker-alt mr-1"></i>Ninh Binh Province
+							</div>
+						</div>
+						<div class="p-4">
+							<h3 class="text-xl font-bold mb-1">Van Long Nature Reserve</h3>
+							<p class="text-xs text-green-700 mb-2">
+								<i class="fas fa-shield-alt mr-1"></i>Wildlife conservation area
+							</p>
+							<p class="text-sm text-gray-600 mb-2">
+								Vietnam's largest wetland nature reserve with spectacular
+								limestone karsts rising from tranquil waters, home to the
+								endangered Delacour's langur.
+							</p>
+
+							<div class="stat-box">
+								<div class="stat-icon bg-green-600">
+									<i class="fas fa-paw"></i>
+								</div>
+								<div class="text-xs">
+									<div class="font-bold text-gray-700">Biodiversity Haven</div>
+									<div class="text-gray-600">
+										32 mammal species, 100+ bird species including rare primates
+									</div>
+								</div>
+							</div>
+
+							<div class="mt-2">
+								<span class="fact-badge bg-green-100 text-green-700">
+									<i class="fas fa-feather-alt mr-1"></i>Bird watching paradise
+								</span>
+								<span class="fact-badge bg-blue-100 text-blue-700">
+									<i class="fas fa-camera mr-1"></i>Mirror-like waters
+								</span>
+								<span class="fact-badge bg-purple-100 text-purple-700">
+									<i class="fas fa-leaf mr-1"></i>Pristine wetlands
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Conservation Note -->
+				<div class="mt-5 bg-blue-50 p-4 rounded-lg flex items-start">
+					<div class="text-blue-700 text-3xl mr-4">
+						<i class="fas fa-info-circle"></i>
+					</div>
+					<div>
+						<h3 class="font-semibold text-blue-800">Conservation Efforts:</h3>
+						<p class="text-sm text-blue-700">
+							Vietnam is actively working to protect these natural wonders
+							through national parks, UNESCO designations, and eco-tourism
+							initiatives. Visitors are encouraged to follow responsible tourism
+							practices to help preserve these unique ecosystems for future
+							generations.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+				<span>Vietnam Travel Presentation</span>
+				<span>Slide 6: Nature's Marvels</span>
+			</div>
+		</div>
+	</body>
 </html>

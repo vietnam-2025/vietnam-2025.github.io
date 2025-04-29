@@ -1,308 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exploring Ninh Binh</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-    }
-    .slide-container {
-      width: 1280px;
-      min-height: 720px;
-      position: relative;
-      background: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-    }
-    .vietnam-accent {
-      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
-    }
-    .vietnam-bar {
-      background-color: #da251d;
-      height: 8px;
-      width: 100%;
-    }
-    .attraction-card {
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      height: 100%;
-      background-color: white;
-    }
-    .attraction-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    }
-    .attraction-image {
-      height: 160px;
-      object-fit: cover;
-      width: 100%;
-      transition: transform 0.4s ease;
-    }
-    .attraction-card:hover .attraction-image {
-      transform: scale(1.05);
-    }
-    .image-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
-    .tag {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 500;
-    }
-    .travel-tip {
-      padding: 10px;
-      border-radius: 8px;
-      border-left: 4px solid;
-      margin-bottom: 8px;
-      font-size: 13px;
-    }
-    .rating {
-      display: inline-flex;
-      color: #FFD700;
-      font-size: 14px;
-    }
-    .map-container {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    .map-marker {
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      background-color: #da251d;
-      border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 0 4px rgba(0,0,0,0.5);
-      transform: translate(-50%, -50%);
-    }
-    .map-label {
-      position: absolute;
-      font-size: 10px;
-      font-weight: bold;
-      color: white;
-      background: rgba(0,0,0,0.6);
-      padding: 2px 6px;
-      border-radius: 10px;
-      transform: translate(-50%, -50%);
-      white-space: nowrap;
-    }
-  </style>
-</head>
-<body>
-  <div class="slide-container mx-auto vietnam-accent">
-    <div class="vietnam-bar"></div>
-    
-    <div class="p-8">
-      <!-- Title Section -->
-      <header class="mb-4 flex items-center">
-        <div>
-          <h1 class="text-4xl font-bold text-gray-800 mb-1">Exploring Ninh Binh</h1>
-          <p class="text-lg text-gray-600">Vietnam's hidden gem of limestone karsts and peaceful waterways</p>
-        </div>
-        <div class="ml-auto">
-          <span class="text-sm font-medium bg-green-100 text-green-800 py-1 px-3 rounded-full">
-            <i class="fas fa-boat mr-1"></i>Rural Getaway
-          </span>
-        </div>
-      </header>
-      
-      <div class="flex flex-col md:flex-row gap-4">
-        <!-- Left Column: Map and Travel Tips -->
-        <div class="w-full md:w-1/3">
-          <!-- Map of Ninh Binh -->
-          <div class="map-container mb-4">
-            <img src="https://ninhbinhtouristcenter.com/wp-content/uploads/2018/04/YOSE6429-HD.jpg" alt="Ninh Binh Overview" class="w-full h-48 object-cover">
-            <div class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-20"></div>
-            <div class="absolute top-0 left-0 w-full p-2 bg-gradient-to-b from-black to-transparent">
-              <h3 class="text-white text-sm font-semibold">Ninh Binh Region</h3>
-            </div>
-            
-            <!-- Map Markers -->
-            <div class="map-marker" style="top: 30%; left: 40%;"></div>
-            <div class="map-label" style="top: 30%; left: 40%; transform: translate(-50%, -140%);">Tam Coc</div>
-            
-            <div class="map-marker" style="top: 45%; left: 60%;"></div>
-            <div class="map-label" style="top: 45%; left: 60%; transform: translate(-50%, -140%);">Trang An</div>
-            
-            <div class="map-marker" style="top: 25%; left: 65%;"></div>
-            <div class="map-label" style="top: 25%; left: 65%; transform: translate(-50%, -140%);">Hang Mua</div>
-            
-            <div class="map-marker" style="top: 60%; left: 30%;"></div>
-            <div class="map-label" style="top: 60%; left: 30%; transform: translate(-50%, -140%);">Bai Dinh Pagoda</div>
-          </div>
-          
-          <!-- Travel Tips -->
-          <div class="bg-gray-50 rounded-lg p-3">
-            <h3 class="text-lg font-semibold mb-3 flex items-center">
-              <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Travel Tips
-            </h3>
-            
-            <div class="travel-tip border-green-500 bg-green-50">
-              <strong class="text-green-700">Best Time to Visit:</strong> 
-              <p class="text-green-600 text-xs mt-1">Visit during dry season (Nov-Apr) for the best views and boat experiences. Avoid June-August when rainfall is high.</p>
-            </div>
-            
-            <div class="travel-tip border-blue-500 bg-blue-50">
-              <strong class="text-blue-700">Boat Tour Tips:</strong> 
-              <p class="text-blue-600 text-xs mt-1">Book boat tours in the early morning (7-9AM) or late afternoon (3-5PM) to avoid crowds and midday heat.</p>
-            </div>
-            
-            <div class="travel-tip border-amber-500 bg-amber-50">
-              <strong class="text-amber-700">Getting Around:</strong> 
-              <p class="text-amber-600 text-xs mt-1">Rent a motorbike for flexibility (150,000₫/day) or hire a car with driver (800,000-1,000,000₫/day) to explore multiple sites.</p>
-            </div>
-            
-            <div class="travel-tip border-purple-500 bg-purple-50">
-              <strong class="text-purple-700">Recommended Stay:</strong> 
-              <p class="text-purple-600 text-xs mt-1">Allocate 2-3 days to fully explore Ninh Binh's attractions without rushing.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Right Column: Attractions -->
-        <div class="w-full md:w-2/3">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- Trang An -->
-            <div class="attraction-card">
-              <div class="image-wrapper">
-                <img src="https://localtoursvietnam.com/upload/source/ninh-binh-travel-1244-19.jpg" alt="Trang An Boat Tour" class="attraction-image">
-                <div class="tag"><i class="fas fa-star mr-1"></i>Top Attraction</div>
-              </div>
-              <div class="p-3">
-                <div class="flex justify-between items-center mb-1">
-                  <h3 class="text-lg font-bold text-gray-800">Trang An Boat Tour</h3>
-                  <div class="rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-500 mb-2">UNESCO World Heritage Site</p>
-                <p class="text-sm text-gray-600 mb-2">A serene boat journey through caves, temples, and valleys with spectacular limestone formations reflecting in clear waters.</p>
-                <div class="flex text-xs text-gray-500 justify-between">
-                  <span><i class="fas fa-clock text-blue-500 mr-1"></i>3 hours</span>
-                  <span><i class="fas fa-money-bill text-green-600 mr-1"></i>250,000₫/person</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Tam Coc -->
-            <div class="attraction-card">
-              <div class="image-wrapper">
-                <img src="https://alohavietnam.net/media/data/tin-tuc/%E1%BA%A2nh/trang-an-vs-tam-coc-9.jpg" alt="Tam Coc" class="attraction-image">
-                <div class="tag bg-blue-600"><i class="fas fa-water mr-1"></i>Scenic</div>
-              </div>
-              <div class="p-3">
-                <div class="flex justify-between items-center mb-1">
-                  <h3 class="text-lg font-bold text-gray-800">Tam Coc</h3>
-                  <div class="rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-500 mb-2">"Halong Bay on Land"</p>
-                <p class="text-sm text-gray-600 mb-2">Rowing boat journey through three natural caves and rice fields, particularly stunning when rice paddies are green or golden.</p>
-                <div class="flex text-xs text-gray-500 justify-between">
-                  <span><i class="fas fa-clock text-blue-500 mr-1"></i>2 hours</span>
-                  <span><i class="fas fa-money-bill text-green-600 mr-1"></i>200,000₫/boat</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Hang Mua -->
-            <div class="attraction-card">
-              <div class="image-wrapper">
-                <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/7b/93/38.jpg" alt="Hang Mua" class="attraction-image">
-                <div class="tag bg-green-600"><i class="fas fa-hiking mr-1"></i>Viewpoint</div>
-              </div>
-              <div class="p-3">
-                <div class="flex justify-between items-center mb-1">
-                  <h3 class="text-lg font-bold text-gray-800">Hang Mua Peak</h3>
-                  <div class="rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-500 mb-2">Panoramic Views</p>
-                <p class="text-sm text-gray-600 mb-2">Climb 500 steps to the dragon-shaped viewpoint for breathtaking panoramas of Tam Coc's rice fields and limestone karsts.</p>
-                <div class="flex text-xs text-gray-500 justify-between">
-                  <span><i class="fas fa-clock text-blue-500 mr-1"></i>1-2 hours</span>
-                  <span><i class="fas fa-money-bill text-green-600 mr-1"></i>100,000₫/person</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Bai Dinh Pagoda -->
-            <div class="attraction-card">
-              <div class="image-wrapper">
-                <img src="https://vietnam.travel/sites/default/files/inline-images/shutterstock_138213581.jpg" alt="Bai Dinh Pagoda" class="attraction-image">
-                <div class="tag bg-amber-600"><i class="fas fa-pray mr-1"></i>Religious</div>
-              </div>
-              <div class="p-3">
-                <div class="flex justify-between items-center mb-1">
-                  <h3 class="text-lg font-bold text-gray-800">Bai Dinh Pagoda</h3>
-                  <div class="rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                  </div>
-                </div>
-                <p class="text-xs text-gray-500 mb-2">Largest Buddhist Complex in Vietnam</p>
-                <p class="text-sm text-gray-600 mb-2">Impressive complex of temples featuring 500 Arhat statues, giant bronze Buddha, and beautiful mountain views.</p>
-                <div class="flex text-xs text-gray-500 justify-between">
-                  <span><i class="fas fa-clock text-blue-500 mr-1"></i>2-3 hours</span>
-                  <span><i class="fas fa-money-bill text-green-600 mr-1"></i>Free (electric car: 30,000₫)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Additional Information -->
-          <div class="mt-4 bg-gray-100 rounded-lg p-3">
-            <h4 class="text-md font-semibold mb-2">Insider Tips:</h4>
-            <ul class="text-sm space-y-1 text-gray-700">
-              <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-600 mt-0.5 mr-2"></i>
-                <span>Spend the night in a homestay in Tam Coc or Trang An for authentic local experiences</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-600 mt-0.5 mr-2"></i>
-                <span>Combine your visit with Cuc Phuong National Park, just 45km from Ninh Binh</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-600 mt-0.5 mr-2"></i>
-                <span>Try local specialties: goat meat (thịt dê) and cơm cháy (crispy rice) dishes</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check-circle text-green-600 mt-0.5 mr-2"></i>
-                <span>Easy day trip from Hanoi (2 hours by train/bus) or stay overnight for fuller experience</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
-      <span>Vietnam Travel Presentation</span>
-      <span>Slide 7: Exploring Ninh Binh</span>
-    </div>
-  </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exploring Ninh Binh</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+		/>
+		<style>
+			body {
+				font-family: "Roboto", sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f8f9fa;
+			}
+			.slide-container {
+				width: 1280px;
+				min-height: 720px;
+				position: relative;
+				background: white;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+			}
+			h1 {
+				font-family: "Playfair Display", serif;
+			}
+			.vietnam-accent {
+				background: linear-gradient(
+					135deg,
+					rgba(218, 37, 29, 0.03) 0%,
+					rgba(255, 255, 0, 0.03) 100%
+				);
+			}
+			.vietnam-bar {
+				background-color: #da251d;
+				height: 8px;
+				width: 100%;
+			}
+			.attraction-card {
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				transition: all 0.3s ease;
+				height: 100%;
+				background-color: white;
+			}
+			.attraction-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+			}
+			.attraction-image {
+				height: 160px;
+				object-fit: cover;
+				width: 100%;
+				transition: transform 0.4s ease;
+			}
+			.attraction-card:hover .attraction-image {
+				transform: scale(1.05);
+			}
+			.image-wrapper {
+				overflow: hidden;
+				position: relative;
+			}
+			.tag {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				background-color: rgba(0, 0, 0, 0.6);
+				color: white;
+				padding: 3px 8px;
+				border-radius: 4px;
+				font-size: 11px;
+				font-weight: 500;
+			}
+			.travel-tip {
+				padding: 10px;
+				border-radius: 8px;
+				border-left: 4px solid;
+				margin-bottom: 8px;
+				font-size: 13px;
+			}
+			.rating {
+				display: inline-flex;
+				color: #ffd700;
+				font-size: 14px;
+			}
+			.map-container {
+				position: relative;
+				overflow: hidden;
+				border-radius: 8px;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			}
+			.map-marker {
+				position: absolute;
+				width: 15px;
+				height: 15px;
+				background-color: #da251d;
+				border-radius: 50%;
+				border: 2px solid white;
+				box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+				transform: translate(-50%, -50%);
+			}
+			.map-label {
+				position: absolute;
+				font-size: 10px;
+				font-weight: bold;
+				color: white;
+				background: rgba(0, 0, 0, 0.6);
+				padding: 2px 6px;
+				border-radius: 10px;
+				transform: translate(-50%, -50%);
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slide-container mx-auto vietnam-accent">
+			<div class="vietnam-bar"></div>
+
+			<div class="p-8">
+				<!-- Title Section -->
+				<header class="mb-4 flex items-center">
+					<div>
+						<h1 class="text-4xl font-bold text-gray-800 mb-1">
+							Exploring Ninh Binh
+						</h1>
+						<p class="text-lg text-gray-600">
+							Vietnam's hidden gem of limestone karsts and peaceful waterways
+						</p>
+					</div>
+					<div class="ml-auto">
+						<span
+							class="text-sm font-medium bg-green-100 text-green-800 py-1 px-3 rounded-full"
+						>
+							<i class="fas fa-boat mr-1"></i>Rural Getaway
+						</span>
+					</div>
+				</header>
+
+				<div class="flex flex-col md:flex-row gap-4">
+					<!-- Left Column: Map and Travel Tips -->
+					<div class="w-full md:w-1/3">
+						<!-- Map of Ninh Binh -->
+						<div class="map-container mb-4">
+							<img
+								src="https://ninhbinhtouristcenter.com/wp-content/uploads/2018/04/YOSE6429-HD.jpg"
+								alt="Ninh Binh Overview"
+								class="w-full h-48 object-cover"
+							/>
+							<div
+								class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-20"
+							></div>
+							<div
+								class="absolute top-0 left-0 w-full p-2 bg-gradient-to-b from-black to-transparent"
+							>
+								<h3 class="text-white text-sm font-semibold">
+									Ninh Binh Region
+								</h3>
+							</div>
+
+							<!-- Map Markers -->
+							<div class="map-marker" style="top: 30%; left: 40%"></div>
+							<div
+								class="map-label"
+								style="top: 30%; left: 40%; transform: translate(-50%, -140%)"
+							>
+								Tam Coc
+							</div>
+
+							<div class="map-marker" style="top: 45%; left: 60%"></div>
+							<div
+								class="map-label"
+								style="top: 45%; left: 60%; transform: translate(-50%, -140%)"
+							>
+								Trang An
+							</div>
+
+							<div class="map-marker" style="top: 25%; left: 65%"></div>
+							<div
+								class="map-label"
+								style="top: 25%; left: 65%; transform: translate(-50%, -140%)"
+							>
+								Hang Mua
+							</div>
+
+							<div class="map-marker" style="top: 60%; left: 30%"></div>
+							<div
+								class="map-label"
+								style="top: 60%; left: 30%; transform: translate(-50%, -140%)"
+							>
+								Bai Dinh Pagoda
+							</div>
+						</div>
+
+						<!-- Travel Tips -->
+						<div class="bg-gray-50 rounded-lg p-3">
+							<h3 class="text-lg font-semibold mb-3 flex items-center">
+								<i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Travel Tips
+							</h3>
+
+							<div class="travel-tip border-green-500 bg-green-50">
+								<strong class="text-green-700">Best Time to Visit:</strong>
+								<p class="text-green-600 text-xs mt-1">
+									Visit during dry season (Nov-Apr) for the best views and boat
+									experiences. Avoid June-August when rainfall is high.
+								</p>
+							</div>
+
+							<div class="travel-tip border-blue-500 bg-blue-50">
+								<strong class="text-blue-700">Boat Tour Tips:</strong>
+								<p class="text-blue-600 text-xs mt-1">
+									Book boat tours in the early morning (7-9AM) or late afternoon
+									(3-5PM) to avoid crowds and midday heat.
+								</p>
+							</div>
+
+							<div class="travel-tip border-amber-500 bg-amber-50">
+								<strong class="text-amber-700">Getting Around:</strong>
+								<p class="text-amber-600 text-xs mt-1">
+									Rent a motorbike for flexibility (150,000₫/day) or hire a car
+									with driver (800,000-1,000,000₫/day) to explore multiple
+									sites.
+								</p>
+							</div>
+
+							<div class="travel-tip border-purple-500 bg-purple-50">
+								<strong class="text-purple-700">Recommended Stay:</strong>
+								<p class="text-purple-600 text-xs mt-1">
+									Allocate 2-3 days to fully explore Ninh Binh's attractions
+									without rushing.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column: Attractions -->
+					<div class="w-full md:w-2/3">
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+							<!-- Trang An -->
+							<div class="attraction-card">
+								<div class="image-wrapper">
+									<img
+										src="https://localtoursvietnam.com/upload/source/ninh-binh-travel-1244-19.jpg"
+										alt="Trang An Boat Tour"
+										class="attraction-image"
+									/>
+									<div class="tag">
+										<i class="fas fa-star mr-1"></i>Top Attraction
+									</div>
+								</div>
+								<div class="p-3">
+									<div class="flex justify-between items-center mb-1">
+										<h3 class="text-lg font-bold text-gray-800">
+											Trang An Boat Tour
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star"></i><i class="fas fa-star"></i
+											><i class="fas fa-star"></i><i class="fas fa-star"></i
+											><i class="fas fa-star"></i>
+										</div>
+									</div>
+									<p class="text-xs text-gray-500 mb-2">
+										UNESCO World Heritage Site
+									</p>
+									<p class="text-sm text-gray-600 mb-2">
+										A serene boat journey through caves, temples, and valleys
+										with spectacular limestone formations reflecting in clear
+										waters.
+									</p>
+									<div class="flex text-xs text-gray-500 justify-between">
+										<span
+											><i class="fas fa-clock text-blue-500 mr-1"></i>3
+											hours</span
+										>
+										<span
+											><i class="fas fa-money-bill text-green-600 mr-1"></i
+											>250,000₫/person</span
+										>
+									</div>
+								</div>
+							</div>
+
+							<!-- Tam Coc -->
+							<div class="attraction-card">
+								<div class="image-wrapper">
+									<img
+										src="https://static.vinwonders.com/production/ninh-binh-vietnam-2.jpg"
+										alt="Tam Coc"
+										class="attraction-image"
+									/>
+									<div class="tag bg-blue-600">
+										<i class="fas fa-water mr-1"></i>Scenic
+									</div>
+								</div>
+								<div class="p-3">
+									<div class="flex justify-between items-center mb-1">
+										<h3 class="text-lg font-bold text-gray-800">Tam Coc</h3>
+										<div class="rating">
+											<i class="fas fa-star"></i><i class="fas fa-star"></i
+											><i class="fas fa-star"></i><i class="fas fa-star"></i
+											><i class="fas fa-star-half"></i>
+										</div>
+									</div>
+									<p class="text-xs text-gray-500 mb-2">"Halong Bay on Land"</p>
+									<p class="text-sm text-gray-600 mb-2">
+										Rowing boat journey through three natural caves and rice
+										fields, particularly stunning when rice paddies are green or
+										golden.
+									</p>
+									<div class="flex text-xs text-gray-500 justify-between">
+										<span
+											><i class="fas fa-clock text-blue-500 mr-1"></i>2
+											hours</span
+										>
+										<span
+											><i class="fas fa-money-bill text-green-600 mr-1"></i
+											>200,000₫/boat</span
+										>
+									</div>
+								</div>
+							</div>
+
+							<!-- Hang Mua -->
+							<div class="attraction-card">
+								<div class="image-wrapper">
+									<img
+										src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/7b/93/38.jpg"
+										alt="Hang Mua"
+										class="attraction-image"
+									/>
+									<div class="tag bg-green-600">
+										<i class="fas fa-hiking mr-1"></i>Viewpoint
+									</div>
+								</div>
+								<div class="p-3">
+									<div class="flex justify-between items-center mb-1">
+										<h3 class="text-lg font-bold text-gray-800">
+											Hang Mua Peak
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star"></i><i class="fas fa-star"></i
+											><i class="fas fa-star"></i><i class="fas fa-star"></i
+											><i class="fas fa-star"></i>
+										</div>
+									</div>
+									<p class="text-xs text-gray-500 mb-2">Panoramic Views</p>
+									<p class="text-sm text-gray-600 mb-2">
+										Climb 500 steps to the dragon-shaped viewpoint for
+										breathtaking panoramas of Tam Coc's rice fields and
+										limestone karsts.
+									</p>
+									<div class="flex text-xs text-gray-500 justify-between">
+										<span
+											><i class="fas fa-clock text-blue-500 mr-1"></i>1-2
+											hours</span
+										>
+										<span
+											><i class="fas fa-money-bill text-green-600 mr-1"></i
+											>100,000₫/person</span
+										>
+									</div>
+								</div>
+							</div>
+
+							<!-- Bai Dinh Pagoda -->
+							<div class="attraction-card">
+								<div class="image-wrapper">
+									<img
+										src="https://static.vinwonders.com/production/bai-dinh-pagoda-1.jpg"
+										alt="Bai Dinh Pagoda"
+										class="attraction-image"
+									/>
+									<div class="tag bg-amber-600">
+										<i class="fas fa-pray mr-1"></i>Religious
+									</div>
+								</div>
+								<div class="p-3">
+									<div class="flex justify-between items-center mb-1">
+										<h3 class="text-lg font-bold text-gray-800">
+											Bai Dinh Pagoda
+										</h3>
+										<div class="rating">
+											<i class="fas fa-star"></i><i class="fas fa-star"></i
+											><i class="fas fa-star"></i><i class="fas fa-star"></i
+											><i class="far fa-star"></i>
+										</div>
+									</div>
+									<p class="text-xs text-gray-500 mb-2">
+										Largest Buddhist Complex in Vietnam
+									</p>
+									<p class="text-sm text-gray-600 mb-2">
+										Impressive complex of temples featuring 500 Arhat statues,
+										giant bronze Buddha, and beautiful mountain views.
+									</p>
+									<div class="flex text-xs text-gray-500 justify-between">
+										<span
+											><i class="fas fa-clock text-blue-500 mr-1"></i>2-3
+											hours</span
+										>
+										<span
+											><i class="fas fa-money-bill text-green-600 mr-1"></i>Free
+											(electric car: 30,000₫)</span
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Additional Information -->
+						<div class="mt-4 bg-gray-100 rounded-lg p-3">
+							<h4 class="text-md font-semibold mb-2">Insider Tips:</h4>
+							<ul class="text-sm space-y-1 text-gray-700">
+								<li class="flex items-start">
+									<i class="fas fa-check-circle text-green-600 mt-0.5 mr-2"></i>
+									<span
+										>Spend the night in a homestay in Tam Coc or Trang An for
+										authentic local experiences</span
+									>
+								</li>
+								<li class="flex items-start">
+									<i class="fas fa-check-circle text-green-600 mt-0.5 mr-2"></i>
+									<span
+										>Combine your visit with Cuc Phuong National Park, just 45km
+										from Ninh Binh</span
+									>
+								</li>
+								<li class="flex items-start">
+									<i class="fas fa-check-circle text-green-600 mt-0.5 mr-2"></i>
+									<span
+										>Try local specialties: goat meat (thịt dê) and cơm cháy
+										(crispy rice) dishes</span
+									>
+								</li>
+								<li class="flex items-start">
+									<i class="fas fa-check-circle text-green-600 mt-0.5 mr-2"></i>
+									<span
+										>Easy day trip from Hanoi (2 hours by train/bus) or stay
+										overnight for fuller experience</span
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+				<span>Vietnam Travel Presentation</span>
+				<span>Slide 7: Exploring Ninh Binh</span>
+			</div>
+		</div>
+	</body>
 </html>

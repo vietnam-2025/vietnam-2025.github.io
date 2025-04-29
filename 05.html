@@ -1,261 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Historical Treasures</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-    }
-    .slide-container {
-      width: 1280px;
-      min-height: 720px;
-      position: relative;
-      background: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-    }
-    .vietnam-accent {
-      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
-    }
-    .vietnam-bar {
-      background-color: #da251d;
-      height: 8px;
-      width: 100%;
-    }
-    .site-card {
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-      height: 100%;
-      background-color: white;
-    }
-    .site-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .site-image {
-      height: 180px;
-      object-fit: cover;
-      width: 100%;
-      transition: all 0.3s ease;
-    }
-    .site-card:hover .site-image {
-      transform: scale(1.05);
-    }
-    .image-container {
-      overflow: hidden;
-      position: relative;
-    }
-    .heritage-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: rgba(218, 37, 29, 0.85);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      z-index: 10;
-    }
-    .site-title {
-      color: #333;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 2px;
-    }
-    .site-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background-color: #da251d;
-    }
-    .fact-icon {
-      width: 24px;
-      height: 24px;
-      background-color: #f8f9fa;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 8px;
-      color: #da251d;
-    }
-  </style>
-</head>
-<body>
-  <div class="slide-container mx-auto vietnam-accent">
-    <div class="vietnam-bar"></div>
-    
-    <div class="p-8">
-      <!-- Title Section -->
-      <header class="mb-6 flex items-center">
-        <div>
-          <h1 class="text-4xl font-bold text-gray-800 mb-2">Historical Treasures</h1>
-          <p class="text-lg text-gray-600">Discover Vietnam's rich heritage through its most significant historical sites</p>
-        </div>
-        <div class="ml-auto">
-          <span class="text-sm font-medium bg-yellow-100 text-yellow-800 py-1 px-3 rounded-full">
-            <i class="fas fa-landmark mr-1"></i>Cultural Heritage
-          </span>
-        </div>
-      </header>
-      
-      <!-- Historical Sites Grid -->
-      <div class="grid grid-cols-2 gap-6">
-        
-        <!-- Imperial City of Hue -->
-        <div class="site-card">
-          <div class="image-container">
-            <img src="https://centralvietnamguide.com/wp-content/uploads/2022/02/hue-citadel.jpg" alt="Imperial City of Hue" class="site-image">
-            <div class="heritage-badge">UNESCO World Heritage</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2 site-title">Imperial City of Hue</h3>
-            <p class="text-sm text-gray-600 mb-3">Former imperial capital of the Nguyen Dynasty (1802-1945), featuring a walled citadel, palaces, temples, and royal tombs along the Perfume River.</p>
-            
-            <div class="flex flex-col space-y-2 text-sm">
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-calendar-alt"></i></span>
-                <span><strong>Established:</strong> Early 19th century</span>
-              </div>
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                <span><strong>Location:</strong> Central Vietnam</span>
-              </div>
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-info-circle"></i></span>
-                <span><strong>Highlight:</strong> The Purple Forbidden City</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- My Son Sanctuary -->
-        <div class="site-card">
-          <div class="image-container">
-            <img src="https://www.travelvietnam.com/images/My-Son-Vietnam-1.jpg" alt="My Son Sanctuary" class="site-image">
-            <div class="heritage-badge">UNESCO World Heritage</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2 site-title">My Son Sanctuary</h3>
-            <p class="text-sm text-gray-600 mb-3">Ancient Hindu temple complex built by the Champa Kingdom between the 4th and 13th centuries, showing Indian cultural influences in architecture.</p>
-            
-            <div class="flex flex-col space-y-2 text-sm">
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-calendar-alt"></i></span>
-                <span><strong>Built:</strong> 4th to 13th century CE</span>
-              </div>
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                <span><strong>Location:</strong> Near Hoi An, Central Vietnam</span>
-              </div>
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-info-circle"></i></span>
-                <span><strong>Highlight:</strong> Brick towers with Sanskrit inscriptions</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Cu Chi Tunnels -->
-        <div class="site-card">
-          <div class="image-container">
-            <img src="https://kampatour.com/pic/blog/images/Cu-Chi-Tunnels-underground.jpg" alt="Cu Chi Tunnels" class="site-image">
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2 site-title">Cu Chi Tunnels</h3>
-            <p class="text-sm text-gray-600 mb-3">Vast network of underground tunnels used by Viet Cong soldiers during the Vietnam War, featuring living quarters, hospitals, and command centers.</p>
-            
-            <div class="flex flex-col space-y-2 text-sm">
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-calendar-alt"></i></span>
-                <span><strong>Built:</strong> 1940s-1960s</span>
-              </div>
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                <span><strong>Location:</strong> Northwest of Ho Chi Minh City</span>
-              </div>
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-info-circle"></i></span>
-                <span><strong>Highlight:</strong> 250km network of interconnected tunnels</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Hoa Lu Ancient Capital -->
-        <div class="site-card">
-          <div class="image-container">
-            <img src="https://cdn.kimkim.com/files/a/images/b96ba23c2ef9339d1af62ac108d493e905bfbfa3/original-4c915ac920ab21d8f14383251899885a.jpg" alt="Hoa Lu Ancient Capital" class="site-image">
-          </div>
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2 site-title">Hoa Lu Ancient Capital</h3>
-            <p class="text-sm text-gray-600 mb-3">Vietnam's first feudal capital during the Dinh and Le dynasties (10th century), nestled among limestone mountains with ancient temples and fortifications.</p>
-            
-            <div class="flex flex-col space-y-2 text-sm">
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-calendar-alt"></i></span>
-                <span><strong>Period:</strong> 968-1009 CE</span>
-              </div>
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                <span><strong>Location:</strong> Ninh Binh Province</span>
-              </div>
-              <div class="flex items-center">
-                <span class="fact-icon"><i class="fas fa-info-circle"></i></span>
-                <span><strong>Highlight:</strong> King Dinh and King Le temples</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Historical Context Box -->
-      <div class="mt-5 bg-gray-100 p-4 rounded-lg flex items-start">
-        <div class="text-amber-800 text-3xl mr-4">
-          <i class="fas fa-scroll"></i>
-        </div>
-        <div>
-          <h3 class="font-semibold text-gray-800">Historical Significance:</h3>
-          <p class="text-sm text-gray-700">Vietnam's historical sites reflect the country's complex past, from ancient Hindu-influenced kingdoms to imperial dynasties and modern conflicts. These sites provide insights into Vietnam's resilience, cultural adaptations, and architectural achievements throughout its 4,000-year history.</p>
-          <div class="flex flex-wrap mt-2">
-            <span class="text-xs bg-amber-100 text-amber-800 py-1 px-2 rounded-full mr-2 mb-2">
-              <i class="fas fa-crown mr-1"></i>Imperial Heritage
-            </span>
-            <span class="text-xs bg-amber-100 text-amber-800 py-1 px-2 rounded-full mr-2 mb-2">
-              <i class="fas fa-place-of-worship mr-1"></i>Religious Monuments
-            </span>
-            <span class="text-xs bg-amber-100 text-amber-800 py-1 px-2 rounded-full mr-2 mb-2">
-              <i class="fas fa-chess-rook mr-1"></i>Military Fortifications
-            </span>
-            <span class="text-xs bg-amber-100 text-amber-800 py-1 px-2 rounded-full mr-2 mb-2">
-              <i class="fas fa-comments mr-1"></i>Multicultural Influences
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
-      <span>Vietnam Travel Presentation</span>
-      <span>Slide 5: Historical Treasures</span>
-    </div>
-  </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Historical Treasures</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+		/>
+		<style>
+			body {
+				font-family: "Roboto", sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f8f9fa;
+			}
+			.slide-container {
+				width: 1280px;
+				min-height: 720px;
+				position: relative;
+				background: white;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+			}
+			h1 {
+				font-family: "Playfair Display", serif;
+			}
+			.vietnam-accent {
+				background: linear-gradient(
+					135deg,
+					rgba(218, 37, 29, 0.03) 0%,
+					rgba(255, 255, 0, 0.03) 100%
+				);
+			}
+			.vietnam-bar {
+				background-color: #da251d;
+				height: 8px;
+				width: 100%;
+			}
+			.site-card {
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+				transition: all 0.3s ease;
+				height: 100%;
+				background-color: white;
+			}
+			.site-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			}
+			.site-image {
+				height: 180px;
+				object-fit: cover;
+				width: 100%;
+				transition: all 0.3s ease;
+			}
+			.site-card:hover .site-image {
+				transform: scale(1.05);
+			}
+			.image-container {
+				overflow: hidden;
+				position: relative;
+			}
+			.heritage-badge {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				background-color: rgba(218, 37, 29, 0.85);
+				color: white;
+				padding: 4px 8px;
+				border-radius: 4px;
+				font-size: 11px;
+				font-weight: 600;
+				z-index: 10;
+			}
+			.site-title {
+				color: #333;
+				position: relative;
+				display: inline-block;
+				padding-bottom: 2px;
+			}
+			.site-title::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 40px;
+				height: 2px;
+				background-color: #da251d;
+			}
+			.fact-icon {
+				width: 24px;
+				height: 24px;
+				background-color: #f8f9fa;
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 8px;
+				color: #da251d;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slide-container mx-auto vietnam-accent">
+			<div class="vietnam-bar"></div>
+
+			<div class="p-8">
+				<!-- Title Section -->
+				<header class="mb-6 flex items-center">
+					<div>
+						<h1 class="text-4xl font-bold text-gray-800 mb-2">
+							Historical Treasures
+						</h1>
+						<p class="text-lg text-gray-600">
+							Discover Vietnam's rich heritage through its most significant
+							historical sites
+						</p>
+					</div>
+					<div class="ml-auto">
+						<span
+							class="text-sm font-medium bg-yellow-100 text-yellow-800 py-1 px-3 rounded-full"
+						>
+							<i class="fas fa-landmark mr-1"></i>Cultural Heritage
+						</span>
+					</div>
+				</header>
+
+				<!-- Historical Sites Grid -->
+				<div class="grid grid-cols-2 gap-6">
+					<!-- Imperial City of Hue -->
+					<div class="site-card">
+						<div class="image-container">
+							<img
+								src="https://centralvietnamguide.com/wp-content/uploads/2022/02/hue-citadel.jpg"
+								alt="Imperial City of Hue"
+								class="site-image"
+							/>
+							<div class="heritage-badge">UNESCO World Heritage</div>
+						</div>
+						<div class="p-4">
+							<h3 class="text-xl font-bold mb-2 site-title">
+								Imperial City of Hue
+							</h3>
+							<p class="text-sm text-gray-600 mb-3">
+								Former imperial capital of the Nguyen Dynasty (1802-1945),
+								featuring a walled citadel, palaces, temples, and royal tombs
+								along the Perfume River.
+							</p>
+
+							<div class="flex flex-col space-y-2 text-sm">
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-calendar-alt"></i
+									></span>
+									<span><strong>Established:</strong> Early 19th century</span>
+								</div>
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-map-marker-alt"></i
+									></span>
+									<span><strong>Location:</strong> Central Vietnam</span>
+								</div>
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-info-circle"></i
+									></span>
+									<span
+										><strong>Highlight:</strong> The Purple Forbidden City</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- My Son Sanctuary -->
+					<div class="site-card">
+						<div class="image-container">
+							<img
+								src="https://www.travelvietnam.com/images/My-Son-Vietnam-1.jpg"
+								alt="My Son Sanctuary"
+								class="site-image"
+							/>
+							<div class="heritage-badge">UNESCO World Heritage</div>
+						</div>
+						<div class="p-4">
+							<h3 class="text-xl font-bold mb-2 site-title">
+								My Son Sanctuary
+							</h3>
+							<p class="text-sm text-gray-600 mb-3">
+								Ancient Hindu temple complex built by the Champa Kingdom between
+								the 4th and 13th centuries, showing Indian cultural influences
+								in architecture.
+							</p>
+
+							<div class="flex flex-col space-y-2 text-sm">
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-calendar-alt"></i
+									></span>
+									<span><strong>Built:</strong> 4th to 13th century CE</span>
+								</div>
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-map-marker-alt"></i
+									></span>
+									<span
+										><strong>Location:</strong> Near Hoi An, Central
+										Vietnam</span
+									>
+								</div>
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-info-circle"></i
+									></span>
+									<span
+										><strong>Highlight:</strong> Brick towers with Sanskrit
+										inscriptions</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Cu Chi Tunnels -->
+					<div class="site-card">
+						<div class="image-container">
+							<img
+								src="https://kampatour.com/pic/blog/images/Cu-Chi-Tunnels-underground.jpg"
+								alt="Cu Chi Tunnels"
+								class="site-image"
+							/>
+						</div>
+						<div class="p-4">
+							<h3 class="text-xl font-bold mb-2 site-title">Cu Chi Tunnels</h3>
+							<p class="text-sm text-gray-600 mb-3">
+								Vast network of underground tunnels used by Viet Cong soldiers
+								during the Vietnam War, featuring living quarters, hospitals,
+								and command centers.
+							</p>
+
+							<div class="flex flex-col space-y-2 text-sm">
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-calendar-alt"></i
+									></span>
+									<span><strong>Built:</strong> 1940s-1960s</span>
+								</div>
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-map-marker-alt"></i
+									></span>
+									<span
+										><strong>Location:</strong> Northwest of Ho Chi Minh
+										City</span
+									>
+								</div>
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-info-circle"></i
+									></span>
+									<span
+										><strong>Highlight:</strong> 250km network of interconnected
+										tunnels</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Hoa Lu Ancient Capital -->
+					<div class="site-card">
+						<div class="image-container">
+							<img
+								src="https://static.vinwonders.com/production/hoa-lu-ancient-capital-1.jpg"
+								alt="Hoa Lu Ancient Capital"
+								class="site-image"
+							/>
+						</div>
+						<div class="p-4">
+							<h3 class="text-xl font-bold mb-2 site-title">
+								Hoa Lu Ancient Capital
+							</h3>
+							<p class="text-sm text-gray-600 mb-3">
+								Vietnam's first feudal capital during the Dinh and Le dynasties
+								(10th century), nestled among limestone mountains with ancient
+								temples and fortifications.
+							</p>
+
+							<div class="flex flex-col space-y-2 text-sm">
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-calendar-alt"></i
+									></span>
+									<span><strong>Period:</strong> 968-1009 CE</span>
+								</div>
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-map-marker-alt"></i
+									></span>
+									<span><strong>Location:</strong> Ninh Binh Province</span>
+								</div>
+								<div class="flex items-center">
+									<span class="fact-icon"
+										><i class="fas fa-info-circle"></i
+									></span>
+									<span
+										><strong>Highlight:</strong> King Dinh and King Le
+										temples</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Historical Context Box -->
+				<div class="mt-5 bg-gray-100 p-4 rounded-lg flex items-start">
+					<div class="text-amber-800 text-3xl mr-4">
+						<i class="fas fa-scroll"></i>
+					</div>
+					<div>
+						<h3 class="font-semibold text-gray-800">
+							Historical Significance:
+						</h3>
+						<p class="text-sm text-gray-700">
+							Vietnam's historical sites reflect the country's complex past,
+							from ancient Hindu-influenced kingdoms to imperial dynasties and
+							modern conflicts. These sites provide insights into Vietnam's
+							resilience, cultural adaptations, and architectural achievements
+							throughout its 4,000-year history.
+						</p>
+						<div class="flex flex-wrap mt-2">
+							<span
+								class="text-xs bg-amber-100 text-amber-800 py-1 px-2 rounded-full mr-2 mb-2"
+							>
+								<i class="fas fa-crown mr-1"></i>Imperial Heritage
+							</span>
+							<span
+								class="text-xs bg-amber-100 text-amber-800 py-1 px-2 rounded-full mr-2 mb-2"
+							>
+								<i class="fas fa-place-of-worship mr-1"></i>Religious Monuments
+							</span>
+							<span
+								class="text-xs bg-amber-100 text-amber-800 py-1 px-2 rounded-full mr-2 mb-2"
+							>
+								<i class="fas fa-chess-rook mr-1"></i>Military Fortifications
+							</span>
+							<span
+								class="text-xs bg-amber-100 text-amber-800 py-1 px-2 rounded-full mr-2 mb-2"
+							>
+								<i class="fas fa-comments mr-1"></i>Multicultural Influences
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+				<span>Vietnam Travel Presentation</span>
+				<span>Slide 5: Historical Treasures</span>
+			</div>
+		</div>
+	</body>
 </html>

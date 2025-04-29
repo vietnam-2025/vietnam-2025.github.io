@@ -1,211 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stunning Sceneries</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-    }
-    .slide-container {
-      width: 1280px;
-      min-height: 720px;
-      position: relative;
-      background: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-    }
-    .vietnam-accent {
-      background: linear-gradient(135deg, rgba(218, 37, 29, 0.03) 0%, rgba(255, 255, 0, 0.03) 100%);
-    }
-    .vietnam-bar {
-      background-color: #da251d;
-      height: 8px;
-      width: 100%;
-    }
-    .scenery-image {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    .scenery-wrapper {
-      overflow: hidden;
-      border-radius: 8px;
-      position: relative;
-    }
-    .scenery-wrapper:hover .scenery-image {
-      transform: scale(1.03);
-    }
-    .scenery-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      padding: 20px;
-      color: white;
-      transition: all 0.3s ease;
-    }
-    .scenery-wrapper:hover .scenery-overlay {
-      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 90%);
-    }
-    .location-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background-color: rgba(0,0,0,0.6);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .photo-credit {
-      position: absolute;
-      bottom: 5px;
-      right: 10px;
-      font-size: 10px;
-      color: rgba(255,255,255,0.7);
-    }
-    .detail-icon {
-      width: 20px;
-      height: 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background-color: rgba(255,255,255,0.2);
-      margin-right: 5px;
-    }
-  </style>
-</head>
-<body>
-  <div class="slide-container mx-auto vietnam-accent">
-    <div class="vietnam-bar"></div>
-    
-    <div class="p-8">
-      <!-- Title Section -->
-      <header class="mb-6 flex items-center">
-        <div>
-          <h1 class="text-4xl font-bold text-gray-800 mb-2">Stunning Sceneries</h1>
-          <p class="text-lg text-gray-600">Vietnam's breathtaking landscapes from mountains to coastal wonders</p>
-        </div>
-        <div class="ml-auto">
-          <span class="text-sm font-medium bg-green-100 text-green-800 py-1 px-3 rounded-full">
-            <i class="fas fa-mountain mr-1"></i>Natural Wonders
-          </span>
-        </div>
-      </header>
-      
-      <!-- Scenery Grid -->
-      <div class="grid grid-cols-2 gap-5">
-        <!-- Ha Long Bay -->
-        <div class="scenery-wrapper">
-          <img src="https://static.vinwonders.com/production/Ha-Long-Bay-banner.jpg" alt="Ha Long Bay" class="scenery-image">
-          <span class="location-badge">Northern Vietnam</span>
-          <div class="scenery-overlay">
-            <h3 class="text-2xl font-bold mb-1">Ha Long Bay</h3>
-            <p class="text-sm mb-2">A UNESCO World Heritage Site with thousands of limestone karsts rising dramatically from emerald waters.</p>
-            <div class="flex text-xs space-x-3 mt-2">
-              <span><i class="detail-icon fas fa-camera"></i>Iconic sunset views</span>
-              <span><i class="detail-icon fas fa-ship"></i>Overnight cruises</span>
-            </div>
-            <span class="photo-credit">© VinWonders</span>
-          </div>
-        </div>
-        
-        <!-- Sapa -->
-        <div class="scenery-wrapper">
-          <img src="https://impresstravel.com/wp-content/uploads/2024/08/5-day-journey-exploring-mai-chau-mu-cang-chai-and-sapa-3.jpg" alt="Sapa" class="scenery-image">
-          <span class="location-badge">Northwest Vietnam</span>
-          <div class="scenery-overlay">
-            <h3 class="text-2xl font-bold mb-1">Sapa</h3>
-            <p class="text-sm mb-2">Terraced rice fields cascade down mountains where ethnic minority villages maintain traditional ways of life.</p>
-            <div class="flex text-xs space-x-3 mt-2">
-              <span><i class="detail-icon fas fa-hiking"></i>Trekking experiences</span>
-              <span><i class="detail-icon fas fa-cloud"></i>Misty mountain views</span>
-            </div>
-            <span class="photo-credit">© Impress Travel</span>
-          </div>
-        </div>
-        
-        <!-- Phong Nha-Ke Bang -->
-        <div class="scenery-wrapper">
-          <img src="https://localvietnam.com/wp-content/uploads/2024/08/phong-nha-cave-boat-tour-2.jpg" alt="Phong Nha-Ke Bang" class="scenery-image">
-          <span class="location-badge">Central Vietnam</span>
-          <div class="scenery-overlay">
-            <h3 class="text-2xl font-bold mb-1">Phong Nha-Ke Bang</h3>
-            <p class="text-sm mb-2">Home to the world's largest caves, ancient limestone karst formations, and underground rivers.</p>
-            <div class="flex text-xs space-x-3 mt-2">
-              <span><i class="detail-icon fas fa-water"></i>Underground rivers</span>
-              <span><i class="detail-icon fas fa-route"></i>Cave exploration</span>
-            </div>
-            <span class="photo-credit">© Local Vietnam</span>
-          </div>
-        </div>
-        
-        <!-- Ninh Binh -->
-        <div class="scenery-wrapper">
-          <img src="https://vietnam.travel/sites/default/files/inline-images/shutterstock_138213581.jpg" alt="Ninh Binh" class="scenery-image">
-          <span class="location-badge">Northern Vietnam</span>
-          <div class="scenery-overlay">
-            <h3 class="text-2xl font-bold mb-1">Ninh Binh</h3>
-            <p class="text-sm mb-2">Often called "Halong Bay on Land" with limestone karsts rising from rice paddies and winding rivers.</p>
-            <div class="flex text-xs space-x-3 mt-2">
-              <span><i class="detail-icon fas fa-boat"></i>Scenic boat rides</span>
-              <span><i class="detail-icon fas fa-tree"></i>Rural landscapes</span>
-            </div>
-            <span class="photo-credit">© Vietnam Tourism</span>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Photography Tips -->
-      <div class="mt-5 bg-yellow-50 rounded-lg p-4 flex items-start">
-        <div class="text-yellow-700 text-3xl mr-4">
-          <i class="fas fa-camera-retro"></i>
-        </div>
-        <div>
-          <h3 class="font-semibold text-yellow-800">Photography Tips:</h3>
-          <div class="grid grid-cols-2 gap-3 mt-1 text-sm text-yellow-700">
-            <div class="flex items-start">
-              <i class="fas fa-sun mr-2 mt-1"></i>
-              <p>Best light at Ha Long Bay is during sunrise or sunset when the karsts cast dramatic shadows</p>
-            </div>
-            <div class="flex items-start">
-              <i class="fas fa-clock mr-2 mt-1"></i>
-              <p>Visit Sapa rice terraces in September-October when they turn golden during harvest season</p>
-            </div>
-            <div class="flex items-start">
-              <i class="fas fa-water mr-2 mt-1"></i>
-              <p>Bring a waterproof camera for cave exploration in Phong Nha-Ke Bang</p>
-            </div>
-            <div class="flex items-start">
-              <i class="fas fa-umbrella mr-2 mt-1"></i>
-              <p>Ninh Binh is most photogenic after light rain when the limestone reflects in the water</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
-      <span>Vietnam Travel Presentation</span>
-      <span>Slide 4: Stunning Sceneries</span>
-    </div>
-  </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Stunning Sceneries</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+		/>
+		<style>
+			body {
+				font-family: "Roboto", sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f8f9fa;
+			}
+			.slide-container {
+				width: 1280px;
+				min-height: 720px;
+				position: relative;
+				background: white;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+			}
+			h1 {
+				font-family: "Playfair Display", serif;
+			}
+			.vietnam-accent {
+				background: linear-gradient(
+					135deg,
+					rgba(218, 37, 29, 0.03) 0%,
+					rgba(255, 255, 0, 0.03) 100%
+				);
+			}
+			.vietnam-bar {
+				background-color: #da251d;
+				height: 8px;
+				width: 100%;
+			}
+			.scenery-image {
+				width: 100%;
+				height: 350px;
+				object-fit: cover;
+				border-radius: 8px;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+			}
+			.scenery-wrapper {
+				overflow: hidden;
+				border-radius: 8px;
+				position: relative;
+			}
+			.scenery-wrapper:hover .scenery-image {
+				transform: scale(1.03);
+			}
+			.scenery-overlay {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+				padding: 20px;
+				color: white;
+				transition: all 0.3s ease;
+			}
+			.scenery-wrapper:hover .scenery-overlay {
+				background: linear-gradient(
+					to top,
+					rgba(0, 0, 0, 0.9),
+					transparent 90%
+				);
+			}
+			.location-badge {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				background-color: rgba(0, 0, 0, 0.6);
+				color: white;
+				padding: 5px 10px;
+				border-radius: 20px;
+				font-size: 12px;
+				font-weight: 600;
+			}
+			.photo-credit {
+				position: absolute;
+				bottom: 5px;
+				right: 10px;
+				font-size: 10px;
+				color: rgba(255, 255, 255, 0.7);
+			}
+			.detail-icon {
+				width: 20px;
+				height: 20px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, 0.2);
+				margin-right: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slide-container mx-auto vietnam-accent">
+			<div class="vietnam-bar"></div>
+
+			<div class="p-8">
+				<!-- Title Section -->
+				<header class="mb-6 flex items-center">
+					<div>
+						<h1 class="text-4xl font-bold text-gray-800 mb-2">
+							Stunning Sceneries
+						</h1>
+						<p class="text-lg text-gray-600">
+							Vietnam's breathtaking landscapes from mountains to coastal
+							wonders
+						</p>
+					</div>
+					<div class="ml-auto">
+						<span
+							class="text-sm font-medium bg-green-100 text-green-800 py-1 px-3 rounded-full"
+						>
+							<i class="fas fa-mountain mr-1"></i>Natural Wonders
+						</span>
+					</div>
+				</header>
+
+				<!-- Scenery Grid -->
+				<div class="grid grid-cols-2 gap-5">
+					<!-- Ha Long Bay -->
+					<div class="scenery-wrapper">
+						<img
+							src="https://static.vinwonders.com/production/Ha-Long-Bay-banner.jpg"
+							alt="Ha Long Bay"
+							class="scenery-image"
+						/>
+						<span class="location-badge">Northern Vietnam</span>
+						<div class="scenery-overlay">
+							<h3 class="text-2xl font-bold mb-1">Ha Long Bay</h3>
+							<p class="text-sm mb-2">
+								A UNESCO World Heritage Site with thousands of limestone karsts
+								rising dramatically from emerald waters.
+							</p>
+							<div class="flex text-xs space-x-3 mt-2">
+								<span
+									><i class="detail-icon fas fa-camera"></i>Iconic sunset
+									views</span
+								>
+								<span
+									><i class="detail-icon fas fa-ship"></i>Overnight
+									cruises</span
+								>
+							</div>
+							<span class="photo-credit">© VinWonders</span>
+						</div>
+					</div>
+
+					<!-- Sapa -->
+					<div class="scenery-wrapper">
+						<img
+							src="https://impresstravel.com/wp-content/uploads/2024/08/5-day-journey-exploring-mai-chau-mu-cang-chai-and-sapa-3.jpg"
+							alt="Sapa"
+							class="scenery-image"
+						/>
+						<span class="location-badge">Northwest Vietnam</span>
+						<div class="scenery-overlay">
+							<h3 class="text-2xl font-bold mb-1">Sapa</h3>
+							<p class="text-sm mb-2">
+								Terraced rice fields cascade down mountains where ethnic
+								minority villages maintain traditional ways of life.
+							</p>
+							<div class="flex text-xs space-x-3 mt-2">
+								<span
+									><i class="detail-icon fas fa-hiking"></i>Trekking
+									experiences</span
+								>
+								<span
+									><i class="detail-icon fas fa-cloud"></i>Misty mountain
+									views</span
+								>
+							</div>
+							<span class="photo-credit">© Impress Travel</span>
+						</div>
+					</div>
+
+					<!-- Phong Nha-Ke Bang -->
+					<div class="scenery-wrapper">
+						<img
+							src="https://static.vinwonders.com/production/Son-Doong-Cave-Quang-Binh.jpeg"
+							alt="Phong Nha-Ke Bang"
+							class="scenery-image"
+						/>
+						<span class="location-badge">Central Vietnam</span>
+						<div class="scenery-overlay">
+							<h3 class="text-2xl font-bold mb-1">Phong Nha-Ke Bang</h3>
+							<p class="text-sm mb-2">
+								Home to the world's largest caves, ancient limestone karst
+								formations, and underground rivers.
+							</p>
+							<div class="flex text-xs space-x-3 mt-2">
+								<span
+									><i class="detail-icon fas fa-water"></i>Underground
+									rivers</span
+								>
+								<span
+									><i class="detail-icon fas fa-route"></i>Cave
+									exploration</span
+								>
+							</div>
+							<span class="photo-credit">© Local Vietnam</span>
+						</div>
+					</div>
+
+					<!-- Ninh Binh -->
+					<div class="scenery-wrapper">
+						<img
+							src="https://vietnam.travel/sites/default/files/inline-images/shutterstock_138213581.jpg"
+							alt="Ninh Binh"
+							class="scenery-image"
+						/>
+						<span class="location-badge">Northern Vietnam</span>
+						<div class="scenery-overlay">
+							<h3 class="text-2xl font-bold mb-1">Ninh Binh</h3>
+							<p class="text-sm mb-2">
+								Often called "Halong Bay on Land" with limestone karsts rising
+								from rice paddies and winding rivers.
+							</p>
+							<div class="flex text-xs space-x-3 mt-2">
+								<span
+									><i class="detail-icon fas fa-boat"></i>Scenic boat
+									rides</span
+								>
+								<span
+									><i class="detail-icon fas fa-tree"></i>Rural landscapes</span
+								>
+							</div>
+							<span class="photo-credit">© Vietnam Tourism</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Photography Tips -->
+				<div class="mt-5 bg-yellow-50 rounded-lg p-4 flex items-start">
+					<div class="text-yellow-700 text-3xl mr-4">
+						<i class="fas fa-camera-retro"></i>
+					</div>
+					<div>
+						<h3 class="font-semibold text-yellow-800">Photography Tips:</h3>
+						<div class="grid grid-cols-2 gap-3 mt-1 text-sm text-yellow-700">
+							<div class="flex items-start">
+								<i class="fas fa-sun mr-2 mt-1"></i>
+								<p>
+									Best light at Ha Long Bay is during sunrise or sunset when the
+									karsts cast dramatic shadows
+								</p>
+							</div>
+							<div class="flex items-start">
+								<i class="fas fa-clock mr-2 mt-1"></i>
+								<p>
+									Visit Sapa rice terraces in September-October when they turn
+									golden during harvest season
+								</p>
+							</div>
+							<div class="flex items-start">
+								<i class="fas fa-water mr-2 mt-1"></i>
+								<p>
+									Bring a waterproof camera for cave exploration in Phong Nha-Ke
+									Bang
+								</p>
+							</div>
+							<div class="flex items-start">
+								<i class="fas fa-umbrella mr-2 mt-1"></i>
+								<p>
+									Ninh Binh is most photogenic after light rain when the
+									limestone reflects in the water
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gray-800 text-white p-2 text-sm flex justify-between mt-4">
+				<span>Vietnam Travel Presentation</span>
+				<span>Slide 4: Stunning Sceneries</span>
+			</div>
+		</div>
+	</body>
 </html>
